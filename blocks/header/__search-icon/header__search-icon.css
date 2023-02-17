@@ -4,6 +4,6 @@
 }
 
 .header__search-button:hover .header__search-icon {
-  transform: rotate(75deg);
+  transform: rotate(95deg);
   margin: 0;
 }

@@ -13,11 +13,13 @@
 }
 .header__tab:hover {
   background-color: rgba(136, 136, 136, 0.5);
-  border-radius: 10px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
   padding: 5px 15px;
 }
 .header__tab:focus {
   background-color: rgba(136, 136, 136, 0.95);
-  border-radius: 10px;
+  border-top-right-radius: 7px;
+  border-top-left-radius: 7px;
   padding: 5px 20px;
 }
