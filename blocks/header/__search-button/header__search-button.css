@@ -1,0 +1,17 @@
+.header__search-button {
+  width: 100px;
+  height: 30px;
+  font-size: 20px;
+  color: #222;
+  background-color: cornsilk;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  transition: 200ms;
+  margin:  0 0 0 10px;
+  user-select: none;
+}

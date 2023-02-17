@@ -1,0 +1,27 @@
+/*общ. стили*/
+@import url(../vendor/normalize.css);
+@import url(../blocks/page/page.css);
+/* HEADER */
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__top-container/header__top-container.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__user/header__user.css);
+@import url(../blocks/header/__user-name/header__user-name.css);
+@import url(../blocks/header/__role/header__role.css);
+@import url(../blocks/header/__exit-button/header__exit-button.css);
+@import url(../blocks/header/__exit-icon/header__exit-icon.css);
+@import url(../blocks/header/__settings-button/header__settings-button.css);
+@import url(../blocks/header/__settings-icon/header__settings-icon.css);
+@import url(../blocks/header/__tabs/header__tabs.css);
+@import url(../blocks/header/__tab/header__tab.css);
+@import url(../blocks/header/__search-body/header__search-body.css);
+@import url(../blocks/header/__search-input/header__search-input.css);
+@import url(../blocks/header/__search-button/header__search-button.css);
+@import url(../blocks/header/__search-icon/header__search-icon.css);
+/* main */
+@import url(../blocks/main/main.css);
+/* footer */
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__text/footer__text.css);
+@import url(../blocks/footer/__report-button/footer__report-button.css);
+@import url(../blocks/footer/__report-icon/footer__report-icon.css);

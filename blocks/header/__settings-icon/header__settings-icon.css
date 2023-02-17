@@ -1,0 +1,7 @@
+.header__settings-icon {
+  transition: 1500ms;
+}
+
+.header__settings-button:hover .header__settings-icon {
+  transform: rotate(360deg);
+}

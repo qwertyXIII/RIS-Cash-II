@@ -1,0 +1,7 @@
+.header__user {
+  color: cornsilk;
+  width: max-content;
+  margin: 0 0 0 auto;
+  position: relative;
+  user-select: none;
+}

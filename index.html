@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="icon" href="./images/logo-s.png" type="image/x-icon">
+  <title>RisCash</title>
+</head>
+
+<body class="page">
+
+  <header class="header">
+    <div class="header__top-container">
+      <img class="header__logo" src="./images/Logo-big.png" alt="RIS | Cash">
+      <div class="header__user">
+        <p class="header__user-name">User Name Lastname</p>
+        <p class="header__role">Role</p>
+      </div>
+      <button class="header__settings-button"><ion-icon class="header__settings-icon" name="settings-outline"></ion-icon></button>
+      <button class="header__exit-button">Выйти<ion-icon class="header__exit-icon" name="exit-outline"></ion-icon></button>
+    </div>
+
+    <div class="header__tabs">
+      <button class="header__tab">Главная</button>
+      <button class="header__tab">Все кассы</button>
+      <button class="header__tab">В ремонте</button>
+      <button class="header__tab">У экспедиторов</button>
+      <button class="header__tab">В магазине</button>
+      <button class="header__tab">Заканивается ФН</button>
+      <button class="header__tab">История</button>
+      <button class="header__tab">Экспедиторы</button>
+      <button class="header__tab">Принять/Выдать</button>
+    </div>
+
+    <div class="header__search-body">
+      <input type="text" class="header__search-input">
+      <button class="header__search-button">Поиск <ion-icon class="header__search-icon" name="search-outline"></ion-icon></button>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="news">
+    </section>
+
+    <section class="elements">
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="footer__text">RIS|Cach v0.0.1 [ALPHA]</p>
+    <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
+  </footer>
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script type="module" src="./utils/constants.js"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

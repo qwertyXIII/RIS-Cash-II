@@ -1,0 +1,9 @@
+.header__role {
+  position: absolute;
+  font-size: 12px;
+  margin: 0;
+  top: 26px;
+  width: 100%;
+  left: 0;
+  color: gray;
+}

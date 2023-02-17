@@ -1,0 +1,6 @@
+.header__search-body {
+  width: 100%;
+  display: flex;
+  padding: 5px 15px;
+  box-sizing: border-box;
+}

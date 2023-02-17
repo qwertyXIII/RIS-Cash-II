@@ -1,0 +1,8 @@
+.header__tabs {
+  width: 100%;
+  display: flex;
+  border-bottom: 1px solid gray;
+  padding: 0 15px;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+}
