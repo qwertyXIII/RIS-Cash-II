@@ -1,16 +1,18 @@
 .header__search-input {
-  width: calc(100% - 110px);
+  width: 100%;
   height: 30px;
-  background-color: transparent;
+  background-color: rgba(128, 128, 128, 0.5);
   border: none;
+  margin: 0 -40px 0 0;
   outline: none;
   color: gray;
-  border-bottom: 1px solid gray;
+  padding: 0 10px;
   transition: 200ms;
   box-sizing: border-box;
+  border-radius: 10px;
 }
 
 .header__search-input:focus {
   color: cornsilk;
-  border-bottom: 1px solid cornsilk;
+  border: 1px solid cornsilk;
 }

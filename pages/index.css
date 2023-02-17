@@ -20,6 +20,31 @@
 @import url(../blocks/header/__search-icon/header__search-icon.css);
 /* main */
 @import url(../blocks/main/main.css);
+@import url(../blocks/tab/_closed/tab_closed.css);
+/* news */
+@import url(../blocks/news/news.css);
+@import url(../blocks/news/__element/news__element.css);
+@import url(../blocks/news/__header/news__header.css);
+@import url(../blocks/news/__text/news__text.css);
+@import url(../blocks/news/__image/news__image.css);
+@import url(../blocks/news/__date/news__date.css);
+/* elements */
+@import url(../blocks/elements/elements.css);
+/* element */
+@import url(../blocks/element/element.css);
+@import url(../blocks/element/__visible/element__visible.css);
+@import url(../blocks/element/visible-info/element__visible-info.css);
+@import url(../blocks/element/__text/element__text.css);
+@import url(../blocks/element/__text/_data/element__text_data.css);
+@import url(../blocks/element/__button-box/element__button-box.css);
+@import url(../blocks/element/__button/element__button.css);
+  
+@import url(../blocks/element/__button-open/element__button-open.css);
+@import url(../blocks/element/__button-edit/element__button-edit.css);
+@import url(../blocks/element/__button-barcode/element__button-barcode.css);
+
+@import url(../blocks/element/__invisible/element__invisible.css);
+@import url(../blocks/element/__invisible/_close/element__invisible_close.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

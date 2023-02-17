@@ -1,0 +1,4 @@
+.element__button-box {
+  width: max-content;
+  display: flex;
+}

@@ -1,0 +1,5 @@
+.element__invisible {
+  padding: 10px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
