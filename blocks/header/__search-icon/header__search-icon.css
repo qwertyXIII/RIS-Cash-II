@@ -1,6 +1,8 @@
 .header__search-icon {
   margin: 0 5px 0 0 ;
   transition: 200ms;
+  position: relative;
+  left: 0px;
 }
 
 .header__search-button:hover .header__search-icon {
