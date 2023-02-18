@@ -1,0 +1,7 @@
+.element__button-open-icon_active {
+  transform: rotate(180deg);
+}
+
+.element__button-open-icon_active:hover {
+  animation: open-icon-animation-reverse 1800ms linear infinite; 
+}

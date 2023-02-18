@@ -1,17 +1,21 @@
-@keyframes open-icon-animation {
+@keyframes barcode-icon-animation {
+  0% {
+    top: -5px;
+  }
   10% {
-    top: 30px;
+    top: 25px;
+    opacity: 1;
   }
   20% {
-    top: 0px;
+    top: -5px;
     opacity: 1;
   }
   30% {
-    top: 30px;
+    top: 25px;
     opacity: 1;
   }
   40% {
-    top: 0;
+    top: -5px;
     opacity: 0;
   }
 }
@@ -25,7 +29,8 @@
   content: "";
   opacity: 0;
   width: 50px;
+  top: -5px;
   left: -10px;
   border: 1px red solid;
-  animation: open-icon-animation 2800ms linear infinite; 
+  animation: barcode-icon-animation 4000ms linear; 
 }

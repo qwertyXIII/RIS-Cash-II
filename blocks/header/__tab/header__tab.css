@@ -7,19 +7,16 @@
   cursor: pointer;
   transition: 200ms;
   background-color: transparent;
+  border-radius: 5px;
   padding: 5px 5px;
   transition: 200ms;
   user-select: none;
 }
 .header__tab:hover {
   background-color: rgba(136, 136, 136, 0.5);
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
   padding: 5px 15px;
 }
 .header__tab:focus {
   background-color: rgba(136, 136, 136, 0.95);
-  border-top-right-radius: 7px;
-  border-top-left-radius: 7px;
   padding: 5px 20px;
 }

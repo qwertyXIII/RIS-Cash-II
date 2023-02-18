@@ -1,12 +1,27 @@
 @keyframes open-icon-animation {
   10% {
-    top: 7px;
+    top: 5px;
   }
   20% {
-    top: 3px;
+    top: 2px;
   }
   30% {
-    top: 7px;
+    top: 5px;
+  }
+  40% {
+    top: 0;
+  }
+}
+
+@keyframes open-icon-animation-reverse {
+  10% {
+    top: -5px;
+  }
+  20% {
+    top: -2px;
+  }
+  30% {
+    top: -5px;
   }
   40% {
     top: 0;
@@ -19,5 +34,5 @@
 }
 
 .element__button-open-icon:hover {
-  animation: open-icon-animation 2800ms linear infinite; 
+  animation: open-icon-animation 1800ms linear infinite; 
 }

@@ -1,0 +1,25 @@
+.form__checkbox {
+  position: relative;
+  margin: 0 5px 10px 0;
+}
+.form__checkbox::after {
+  content: "";
+  left: -3px;
+  top: -3px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  z-index: 148;
+  background-color: #444;
+  border-radius: 5px;
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.form__checkbox:hover::after {
+  background-color: #555;
+}
+
+.form__checkbox:checked::after {
+  background-color: cornsilk;
+}

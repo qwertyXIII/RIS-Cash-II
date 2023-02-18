@@ -1,0 +1,20 @@
+.form__input {
+  height: 50px;
+  width: 300px;
+  background-color: #444;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 5px 10px ;
+  box-sizing: border-box;
+  color: cornsilk;
+  margin: 10px 10px;
+  transition: 200ms;
+  position: relative;
+}
+.form__input:hover {
+  outline: 1px solid gray;  
+}
+.form__input:focus {
+  outline: 1px solid cornsilk;  
+}

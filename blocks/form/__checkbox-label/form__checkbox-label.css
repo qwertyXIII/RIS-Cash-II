@@ -1,0 +1,15 @@
+.form__checkbox-label {
+  color: #555;
+  font-size: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.form__checkbox-label:hover {
+  color: #666;
+}
+
+
+.form__checkbox:checked + .form__checkbox-label {
+  color: cornsilk;
+}

@@ -1,0 +1,22 @@
+@keyframes edit-icon-animation {
+  0% {
+    transform: rotate(10deg);
+  }
+  10% {
+    transform: rotate(-10deg);
+  }
+  20% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(-10deg);
+  }
+  40% {
+    transform: rotate(0deg);
+  }
+}
+
+.element__button-edit:hover .element__button-edit-icon {
+  position: relative;
+  animation: edit-icon-animation 2000ms linear; 
+}

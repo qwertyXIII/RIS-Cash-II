@@ -1,0 +1,26 @@
+.form__input-prompt {
+  margin: 0;
+  position: absolute;
+  font-size: 13px;
+  top: 25px;
+  left: 20px;
+  padding: 3px 5px 3px 5px;
+  width: max-content;
+  color: #222;
+  transition: 200ms;
+  cursor: text;
+  user-select: none;
+  border-radius: 7px;
+}
+
+.form__input:focus + .form__input-prompt {
+  color: black;
+  top: 0px;
+  background-color: cornsilk;
+}
+
+.form__input:not(:placeholder-shown) + .form__input-prompt {
+  color: black;
+  top: 0px;
+  background-color: cornsilk;
+}

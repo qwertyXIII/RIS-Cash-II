@@ -48,52 +48,67 @@
     <section class="news tab_state_closed">
     </section>
 
-    <section class="elements">
+    <section class="elements tab_state_closed">
+    </section>
+    
+    <section class="change-location">
+      <form class="change-location__form form">
+        <div class="form__column">
+          <input class="form__input form__input-switch" type="checkbox" name="form-switch">
+          <div class="form__input-container">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-kkt" id="form-input-kkt" list="kkt-list">
+            <label class="form__input-prompt" for="form-input-kkt">ККТ кассы</label>
+            <datalist id="kkt-list">
+              <option>0000000000001234</option>
+            </datalist>  
+          </div>
+          <div class="form__input-container">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-sn" id="form-input-sn">
+            <label class="form__input-prompt" for="form-input-sn">S/N Кассы</label>
+          </div>
+          <div class="form__checkbox-container">
+            <input class="form__checkbox form__checkbox-car-charger" type="checkbox" id="car-charger" name="car-charger">
+            <label class="form__checkbox-label" for="car-charger">Автомобильное зарядное утсройство</label>
+          </div>
+          <div class="form__checkbox-container">
+            <input class="form__checkbox form__checkbox-car-charger" type="checkbox" id="mains-charger" name="mains-charger">
+            <label class="form__checkbox-label" for="mains-charger">Сетевое зарядное утсройство</label>
+          </div>
+        </div>
+        <div class="form__column">
+          <select name="" id="" class="form__input form__input-from">
+            <option value="forwarder" class="form__option">Экспедитору</option>
+            <option value="repair" class="form__option">В ремонт</option>
+          </select>
+          <div class="form__input-container">
+            <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-name" id="form-input-name" list="forwarder-list">
+            <label class="form__input-prompt" for="form-input-name">ФИО Экспедитора</label>
+            <datalist id="forwarder-list">
+              <option>Экспедиторов Экспедитор Экспедиторович</option>
+            </datalist> 
+          </div>
+          <div class="form__input-container">
+            <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-number" id="form-input-number">
+            <label class="form__input-prompt" for="form-input-number">Номер Экспедитора</label>
+          </div>
 
-      <div class="element">
-        <div class="element__visible">
-          <div class="element__visible-info">
-            <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
-            <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data kkt-location">у экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
-          </div>
-          <div class="element__button-box">
-            <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
-            <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
-            <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
-          </div>
-        </div>
-        <div class="element__invisible element__invisible_close">
-          <p class="element__text">Ридер с кассой №: <span class="element__text element__text_data kkt-reader">Test READER</span></p>
-          <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
-          <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
-        </div>
-      </div>
 
-      <div class="element">
-        <div class="element__visible">
-          <div class="element__visible-info">
-            <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
-            <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data kkt-location">у экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
+            
+          <div class="form__input-container">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-reader" id="form-input-reader">
+            <label class="form__input-prompt" for="form-input-reader">Ридер №</label>
           </div>
-          <div class="element__button-box">
-            <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
-            <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
-            <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
-          </div>
-        </div>
-        <div class="element__invisible element__invisible_close">
-          <p class="element__text">Ридер с кассой №: <span class="element__text element__text_data kkt-reader">Test READER</span></p>
-          <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
-          <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
-        </div>
-      </div>
 
+
+          <button class="form__input form__send form__send-assue">Выдать</button>
+        </div>
+      </form>
     </section>
 
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.1.1 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.1.2 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon"
         name="bug-outline"></ion-icon></button>
   </footer>
@@ -106,27 +121,65 @@
     </div>
   </template>
 
-  <template id="element-template">
-
+  <template id="element-template-forwarder">
     <div class="element">
       <div class="element__visible">
         <div class="element__visible-info">
           <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
-          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data kkt-location">у экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
+          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">У экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
         </div>
         <div class="element__button-box">
-          <button class="element__button element__button-barcode"><ion-icon name="barcode-outline"></ion-icon></button>
-          <button class="element__button element__button-edit"><ion-icon name="create-outline"></ion-icon></button>
-          <button class="element__button element__button-open"><ion-icon name="chevron-down-outline"></ion-icon></button>
+          <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
+          <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
+          <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
         </div>
       </div>
       <div class="element__invisible element__invisible_close">
         <p class="element__text">Ридер с кассой №: <span class="element__text element__text_data kkt-reader">Test READER</span></p>
+        <p class="element__text">Дополнительное оборудование: <span class="element__text element__text_data kkt-equipment">СЗУ, АЗУ</span></p>
         <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
         <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
       </div>
     </div>
+  </template>
 
+  <template id="element-template-repair">
+    <div class="element">
+      <div class="element__visible">
+        <div class="element__visible-info">
+          <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
+          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">В ремонте по заявке - </span><span class="element__text element__text_data kkt-number">S123123</span>, дефект - <span class="element__text element__text_data kkt-defect">Не включается</span></p>
+        </div>
+        <div class="element__button-box">
+          <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
+          <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
+          <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
+        </div>
+      </div>
+      <div class="element__invisible element__invisible_close">
+        <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
+        <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
+      </div>
+    </div>
+  </template>
+
+  <template id="element-template-shop">
+    <div class="element">
+      <div class="element__visible">
+        <div class="element__visible-info">
+          <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
+          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">В магазине</span></p>
+        </div>
+        <div class="element__button-box">
+          <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
+          <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
+          <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
+        </div>
+      </div>
+      <div class="element__invisible element__invisible_close">
+        <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
+      </div>
+    </div>
   </template>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
