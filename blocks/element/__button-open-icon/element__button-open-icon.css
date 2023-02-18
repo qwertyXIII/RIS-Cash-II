@@ -1,0 +1,23 @@
+@keyframes open-icon-animation {
+  10% {
+    top: 7px;
+  }
+  20% {
+    top: 3px;
+  }
+  30% {
+    top: 7px;
+  }
+  40% {
+    top: 0;
+  }
+}
+
+.element__button-open-icon {
+  position: relative;
+  top: 0;
+}
+
+.element__button-open-icon:hover {
+  animation: open-icon-animation 2800ms linear infinite; 
+}

@@ -1,5 +1,5 @@
-.element__button-open:hover:before {
-  content: "Раскрыть";
+.element__button-edit:hover:before {
+  content: "Редактировать";
   position: absolute;
   font-size: 12px;
   top: -25px;
@@ -11,7 +11,7 @@
   z-index: 1000;
 }
 
-.element__button-open:hover:after {
+.element__button-edit:hover:after {
   content: "";
   transform: rotate(45deg);
   position: absolute;

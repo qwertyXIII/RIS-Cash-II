@@ -13,8 +13,5 @@
   margin: 0 0 0 10px;
   transition: 200ms;
   cursor: pointer;
-}
-
-.element__button:hover {
-  opacity: 0.8;
+  position: relative;
 }

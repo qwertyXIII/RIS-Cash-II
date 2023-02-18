@@ -57,9 +57,28 @@
             <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data kkt-location">у экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
           </div>
           <div class="element__button-box">
-            <button class="element__button element__button-barcode"><ion-icon name="barcode-outline"></ion-icon></button>
-            <button class="element__button element__button-edit"><ion-icon name="create-outline"></ion-icon></button>
-            <button class="element__button element__button-open"><ion-icon name="chevron-down-outline"></ion-icon></button>
+            <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
+            <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
+            <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
+          </div>
+        </div>
+        <div class="element__invisible element__invisible_close">
+          <p class="element__text">Ридер с кассой №: <span class="element__text element__text_data kkt-reader">Test READER</span></p>
+          <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
+          <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
+        </div>
+      </div>
+
+      <div class="element">
+        <div class="element__visible">
+          <div class="element__visible-info">
+            <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
+            <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data kkt-location">у экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
+          </div>
+          <div class="element__button-box">
+            <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
+            <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
+            <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
           </div>
         </div>
         <div class="element__invisible element__invisible_close">
@@ -74,7 +93,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.1.0 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.1.1 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon"
         name="bug-outline"></ion-icon></button>
   </footer>

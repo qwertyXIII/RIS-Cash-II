@@ -39,6 +39,10 @@
 @import url(../blocks/element/__button-box/element__button-box.css);
 @import url(../blocks/element/__button/element__button.css);
   
+@import url(../blocks/element/__button-open-icon/element__button-open-icon.css);
+@import url(../blocks/element/__button-edit-icon/element__button-edit-icon.css);
+@import url(../blocks/element/__button-barcode-icon/element__button-barcode-icon.css);
+  
 @import url(../blocks/element/__button-open/element__button-open.css);
 @import url(../blocks/element/__button-edit/element__button-edit.css);
 @import url(../blocks/element/__button-barcode/element__button-barcode.css);
