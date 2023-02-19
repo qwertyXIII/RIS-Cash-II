@@ -55,7 +55,7 @@
       <form class="change-location__form form">
         <div class="form__column">
           <input class="form__input form__input-switch" type="checkbox" name="form-switch">
-          <select class="form__input form__input-from switchable">
+          <select class="form__input form__input-from switchable form__input_disabled">
             <option value="forwarder" class="form__option">От экспедитора</option>
             <option value="repair" class="form__option">Из ремонта</option>
           </select>
@@ -70,7 +70,7 @@
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-sn" id="form-input-sn">
             <label class="form__input-prompt" for="form-input-sn">S/N Кассы</label>
           </div>
-          <div class="form__input-container switchable">
+          <div class="form__input-container switchable form__input_disabled">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-fn" id="form-input-fn">
             <label class="form__input-prompt" for="form-input-fn">Срок действия ФН</label>
           </div>
@@ -86,7 +86,7 @@
             <input class="form__checkbox form__checkbox-mains-charger" type="checkbox" id="mains-charger" name="mains-charger">
             <label class="form__checkbox-label" for="mains-charger">Сетевое зарядное утсройство</label>
           </div>
-          <button class="form__input form__send form__send-accept">Выдать</button>
+          <button class="form__input form__send form__send-accept form__input_disabled">Принять</button>
         </div>
 
         <div class="form__column">
@@ -109,19 +109,14 @@
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-note" id="form-input-note">
             <label class="form__input-prompt" for="form-input-note">Примечание</label>
           </div>
-
-
-          
-          <div class="form__input-container switchable">
+          <div class="form__input-container switchable form__input_disabled">
             <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-bid" id="form-input-bid">
             <label class="form__input-prompt" for="form-input-bid">Заявка №</label>
           </div>
-          <div class="form__input-container switchable">
+          <div class="form__input-container switchable form__input_disabled">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-defect" id="form-input-defect">
             <label class="form__input-prompt" for="form-input-defect">Дефект</label>
           </div>
-
-
           <button class="form__input form__send form__send-issue switchable">Выдать</button>
         </div>
       </form>
@@ -130,7 +125,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.1.4 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.1.5 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon"
         name="bug-outline"></ion-icon></button>
   </footer>
