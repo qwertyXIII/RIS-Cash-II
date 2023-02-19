@@ -1,15 +1,15 @@
 import { formSwitcher } from "./components/formSwitcher.js";
-import { formCheckboxSwitch, formInputFn, formInputLocation } from "./utils/constants.js";
+import { formCheckboxSwitch, formInputFn, formInputFrom, formInputLocation } from "./utils/constants.js";
 
 formInputLocation.addEventListener("change", () => {
-    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFn);
+    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFrom);
 })
 
-document.querySelector('.form__input-fn').addEventListener("change", () => {
-    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFn);
+formInputFrom.addEventListener("change", () => {
+    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFrom);
     console.log(123);
 })
 
 formCheckboxSwitch.addEventListener("click", () => {
-    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFn);
+    formSwitcher(formCheckboxSwitch, formInputLocation, formInputFrom);
 })

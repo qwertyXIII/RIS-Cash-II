@@ -55,7 +55,7 @@
       <form class="change-location__form form">
         <div class="form__column">
           <input class="form__input form__input-switch" type="checkbox" name="form-switch">
-          <select class="form__input form__input-container form__input-from">
+          <select class="form__input form__input-from switchable">
             <option value="forwarder" class="form__option">От экспедитора</option>
             <option value="repair" class="form__option">Из ремонта</option>
           </select>
@@ -70,58 +70,59 @@
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-sn" id="form-input-sn">
             <label class="form__input-prompt" for="form-input-sn">S/N Кассы</label>
           </div>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-fn" id="form-input-fn">
             <label class="form__input-prompt" for="form-input-fn">Срок действия ФН</label>
           </div>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-reader" id="form-input-reader">
             <label class="form__input-prompt" for="form-input-reader">Ридер №</label>
           </div>
-          <div class="form__input-container form__checkbox-container">
+          <div class="form__checkbox-container switchable">
             <input class="form__checkbox form__checkbox-car-charger" type="checkbox" id="car-charger" name="car-charger">
             <label class="form__checkbox-label" for="car-charger">Автомобильное зарядное утсройство</label>
           </div>
-          <div class="form__input-container form__checkbox-container">
+          <div class="form__checkbox-container switchable">
             <input class="form__checkbox form__checkbox-mains-charger" type="checkbox" id="mains-charger" name="mains-charger">
             <label class="form__checkbox-label" for="mains-charger">Сетевое зарядное утсройство</label>
           </div>
+          <button class="form__input form__send form__send-accept">Выдать</button>
         </div>
 
         <div class="form__column">
-          <select class="form__input form__input-location">
+          <select class="form__input form__input-location switchable">
             <option value="forwarder" class="form__option">Экспедитору</option>
             <option value="repair" class="form__option">В ремонт</option>
           </select>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-name" id="form-input-name" list="forwarder-list">
             <label class="form__input-prompt" for="form-input-name">ФИО Экспедитора</label>
             <datalist id="forwarder-list">
               <option>Экспедиторов Экспедитор Экспедиторович</option>
             </datalist> 
           </div>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-number" id="form-input-number">
             <label class="form__input-prompt" for="form-input-number">Номер Экспедитора</label>
           </div>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-note" id="form-input-note">
             <label class="form__input-prompt" for="form-input-note">Примечание</label>
           </div>
 
 
           
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-bid" id="form-input-bid">
             <label class="form__input-prompt" for="form-input-bid">Заявка №</label>
           </div>
-          <div class="form__input-container">
+          <div class="form__input-container switchable">
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-defect" id="form-input-defect">
             <label class="form__input-prompt" for="form-input-defect">Дефект</label>
           </div>
 
 
-          <button class="form__input form__send form__send-assue">Выдать</button>
+          <button class="form__input form__send form__send-issue switchable">Выдать</button>
         </div>
       </form>
     </section>
@@ -129,7 +130,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.1.3 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.1.4 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon"
         name="bug-outline"></ion-icon></button>
   </footer>

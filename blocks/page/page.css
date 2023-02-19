@@ -27,8 +27,7 @@
   /* padding вокруг плашки */
 }
 
-/*
-  * {
-    outline: 1px red solid;
-  }
-  */
+
+*  {
+  transform: 3000ms !important;
+}

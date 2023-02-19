@@ -9,7 +9,7 @@
   box-sizing: border-box;
   color: cornsilk;
   margin: 10px 10px;
-  transition: 200ms;
+  transition: 500ms;
   position: relative;
 }
 .form__input:hover {

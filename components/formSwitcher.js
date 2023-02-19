@@ -11,38 +11,46 @@ import {
     formInputSN,
     formInputFrom,
     formInputLocation,
-    formInputFn
+    formInputFn,
+    formButtonAccept,
+    formButtonIssue
 } from '../utils/constants.js';
 
-export function formSwitcher (switcher, selectorOne, selectorTwo) {
+export function formSwitcher(switcher, selectorOne, selectorTwo) {
 
-    for (let e of document.querySelectorAll('.form__input-container')) {
+    for (let e of document.querySelectorAll('.switchable')) {
         e.classList.add('form__input_disabled');
     }
 
     formInputLocation.classList.add('form__input_disabled');
-    
+
+
+    formButtonAccept.classList.add('form__input_disabled');
+    formButtonIssue.classList.add('form__input_disabled');
+
     formInputKKT.closest('.form__input-container').classList.remove('form__input_disabled');
     formInputSN.closest('.form__input-container').classList.remove('form__input_disabled');
 
     if (!switcher.checked) {
+        formButtonIssue.classList.remove('form__input_disabled');
         formInputLocation.classList.remove('form__input_disabled');
         if (selectorOne.value == 'forwarder') {
-            formInputNote.closest('.form__input-container').classList.remove('form__input_disabled');
-            formInputReader.closest('.form__input-container').classList.remove('form__input_disabled');
-            formInputName.closest('.form__input-container').classList.remove('form__input_disabled');
-            formInputNumber.closest('.form__input-container').classList.remove('form__input_disabled');
-            formCheckboxCarCahrger.closest('.form__input-container').classList.remove('form__input_disabled');
-            formCheckboxMainsCahrger.closest('.form__input-container').classList.remove('form__input_disabled');
-        } else if (selector.value == 'repair') {
-            formInputBid.closest('.form__input-container').classList.remove('form__input_disabled');
-            formInputDefect.closest('.form__input-container').classList.remove('form__input_disabled');
+            formInputNote.closest('.switchable').classList.remove('form__input_disabled');
+            formInputReader.closest('.switchable').classList.remove('form__input_disabled');
+            formInputName.closest('.switchable').classList.remove('form__input_disabled');
+            formInputNumber.closest('.switchable').classList.remove('form__input_disabled');
+            formCheckboxCarCahrger.closest('.switchable').classList.remove('form__input_disabled');
+            formCheckboxMainsCahrger.closest('.switchable').classList.remove('form__input_disabled');
+        } else if (selectorOne.value == 'repair') {
+            formInputBid.closest('.switchable').classList.remove('form__input_disabled');
+            formInputDefect.closest('.switchable').classList.remove('form__input_disabled');
         }
-        
+
     } else {
+        formButtonAccept.classList.remove('form__input_disabled');
         formInputFrom.classList.remove('form__input_disabled');
         if (selectorTwo.value == 'repair') {
-            formInputFn.closest('.form__input-container').classList.remove('form__input_disabled');
+            formInputFn.closest('.switchable').classList.remove('form__input_disabled');
         }
     }
 }
