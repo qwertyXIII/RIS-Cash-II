@@ -1,0 +1,10 @@
+.form__input_disabled {
+    height: 0;
+    padding: 0;
+    width:  0%;
+    margin: 0;
+    opacity: -1;
+    pointer-events: none;
+    visibility: hidden;
+    overflow: hidden;
+}

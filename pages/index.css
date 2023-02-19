@@ -54,6 +54,7 @@
 @import url(../blocks/form/__column/form__column.css);
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_disabled/form__input_disabled.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
 @import url(../blocks/form/__input-prompt/form__input-prompt.css);
 @import url(../blocks/form/__input-switch/form__input-switch.css);
