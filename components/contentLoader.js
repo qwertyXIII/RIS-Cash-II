@@ -1,17 +1,17 @@
-import { elementsContainer, elementTemplateForwarder, elementTemplateNews, newsContainer } from "../utils/constants.js";
+import { elementsContainer, elementTemplateForwarder, elementTemplateNews, elementTemplateRepair, elementTemplateShop, newsContainer } from "../utils/constants.js";
 import { getData } from "./communicator.js";
 
-export function contentLoader(type, parametes) {
+export function contentLoader(type, parameters) {
   switch (type) {
     case 'news':
-      getData(parametes.table).then((answer) => {
+      getData(parameters).then((answer) => {
         answer.answer.forEach(data => {
           elementsContainer.append(createElementTypeNews(data))
         });
       });
       break;
     case 'inForwarder':
-      getData(parametes.table).then((answer) => {
+      getData(parameters).then((answer) => {
         answer.answer.forEach(data => {
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
@@ -20,7 +20,7 @@ export function contentLoader(type, parametes) {
       });
       break;
     case 'inRepair':
-      getData(parametes.table).then((answer) => {
+      getData(parameters).then((answer) => {
         answer.answer.forEach(data => {
           if (data.location == 'repair') {
             elementsContainer.append(createElementTypeInRepair(data))
@@ -29,7 +29,7 @@ export function contentLoader(type, parametes) {
       });
       break;
     case 'inShop':
-      getData(parametes.table).then((answer) => {
+      getData(parameters).then((answer) => {
         answer.answer.forEach(data => {
           if (data.location == 'shop') {
             elementsContainer.append(createElementTypeInShop(data))
@@ -38,7 +38,7 @@ export function contentLoader(type, parametes) {
       });
       break;
     case 'anywhere':
-      getData(parametes.table).then((answer) => {
+      getData(parameters).then((answer) => {
         answer.answer.forEach(data => {
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
@@ -89,7 +89,7 @@ function createElementTypeInForwarder(data) {
 }
 
 function createElementTypeInShop(data) {
-  let element = elementTemplateForwarder.content.querySelector('.content').cloneNode(true);
+  let element = elementTemplateShop.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
   element.querySelector('.kkt-SN').textContent = data.sn;
@@ -109,7 +109,7 @@ function createElementTypeInShop(data) {
   return element;
 }
 function createElementTypeInRepair(data) {
-  let element = elementTemplateForwarder.content.querySelector('.content').cloneNode(true);
+  let element = elementTemplateRepair.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
   element.querySelector('.kkt-SN').textContent = data.sn;
