@@ -5,22 +5,31 @@ export function contentLoader(type, parameters) {
   switch (type) {
     case 'news':
       getData(parameters).then((answer) => {
+        elementsContainer.innerHTML = ''
         answer.answer.forEach(data => {
           elementsContainer.append(createElementTypeNews(data))
         });
       });
       break;
-    case 'inForwarder':
+    case 'element':
       getData(parameters).then((answer) => {
+        elementsContainer.innerHTML = ''
         answer.answer.forEach(data => {
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
-          }
+          } else
+            if (data.location == 'repair') {
+              elementsContainer.append(createElementTypeInRepair(data))
+            } else
+              if (data.location == 'shop') {
+                elementsContainer.append(createElementTypeInShop(data))
+              }
         });
       });
       break;
     case 'inRepair':
       getData(parameters).then((answer) => {
+        elementsContainer.innerHTML = ''
         answer.answer.forEach(data => {
           if (data.location == 'repair') {
             elementsContainer.append(createElementTypeInRepair(data))
@@ -30,6 +39,7 @@ export function contentLoader(type, parameters) {
       break;
     case 'inShop':
       getData(parameters).then((answer) => {
+        elementsContainer.innerHTML = ''
         answer.answer.forEach(data => {
           if (data.location == 'shop') {
             elementsContainer.append(createElementTypeInShop(data))
@@ -39,16 +49,17 @@ export function contentLoader(type, parameters) {
       break;
     case 'anywhere':
       getData(parameters).then((answer) => {
+        elementsContainer.innerHTML = ''
         answer.answer.forEach(data => {
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
-          } else 
-          if (data.location == 'repair') {
-            elementsContainer.append(createElementTypeInRepair(data))
           } else
-          if (data.location == 'shop') {
-            elementsContainer.append(createElementTypeInShop(data))
-          }
+            if (data.location == 'repair') {
+              elementsContainer.append(createElementTypeInRepair(data))
+            } else
+              if (data.location == 'shop') {
+                elementsContainer.append(createElementTypeInShop(data))
+              }
         });
       });
       break;

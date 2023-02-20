@@ -24,48 +24,19 @@ mainTab.addEventListener("click", (e) => {
 });
 allCashTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
-  contentLoader ('anywhere', {table: 'base'})
+  contentLoader ('element', {table: 'base'});
 });
 inRepairTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
-
-  console.log(1);
-  let array = [];
-
-  let interval = 1
-
-  for (let e of elementsContainer.querySelectorAll('.element')) {
-    array.push(e)
-  }
-
-  function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-    while (currentIndex != 0) {
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex--;
-      [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-    return array;
-  }
-  
-  array = shuffle(array);
-
-  for (let e of array) {
-    
-    setInterval(() => {
-      e.remove();
-    }, interval);
-    interval = interval + 200
-  }
-  interval = 1
-
+  contentLoader('element', {table: 'base', location: 'repair'});
 });
 inForwarderTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
+  contentLoader('element', {table: 'base', location: 'forwarder'});
 });
 inShopTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
+  contentLoader('element', {table: 'base', location: 'shop'});
 });
 endsFNTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
