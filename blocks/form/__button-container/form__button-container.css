@@ -1,0 +1,6 @@
+.form__button-container {
+    width: 320px;
+    height: 70px;
+    display: flex;
+    transition: 500ms;
+}

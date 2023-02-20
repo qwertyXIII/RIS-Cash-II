@@ -1,0 +1,5 @@
+.notification__text-container {
+    color: cornsilk;
+    display: flex;
+    align-items: center;
+}

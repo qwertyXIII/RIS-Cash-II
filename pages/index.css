@@ -14,13 +14,16 @@
 @import url(../blocks/header/__settings-icon/header__settings-icon.css);
 @import url(../blocks/header/__tabs/header__tabs.css);
 @import url(../blocks/header/__tab/header__tab.css);
+@import url(../blocks/header/__tab/_active/header__tab_active.css);
 @import url(../blocks/header/__search-body/header__search-body.css);
 @import url(../blocks/header/__search-input/header__search-input.css);
 @import url(../blocks/header/__search-button/header__search-button.css);
 @import url(../blocks/header/__search-icon/header__search-icon.css);
 /* main */
 @import url(../blocks/main/main.css);
+/* TABS */
 @import url(../blocks/tab/_closed/tab_closed.css);
+@import url(../blocks/tab-window/tab-window.css);
 /* news */
 @import url(../blocks/news/news.css);
 @import url(../blocks/news/__element/news__element.css);
@@ -54,14 +57,24 @@
 @import url(../blocks/form/__column/form__column.css);
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__reset/form__reset.css);
+@import url(../blocks/form/__send/form__send.css);
 @import url(../blocks/form/__input/_disabled/form__input_disabled.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
+@import url(../blocks/form/__button-container/form__button-container.css);
 @import url(../blocks/form/__input-prompt/form__input-prompt.css);
 @import url(../blocks/form/__input-switch/form__input-switch.css);
 @import url(../blocks/form/__input-from/form__input-from.css);
 @import url(../blocks/form/__checkbox-container/form__checkbox-container.css);
 @import url(../blocks/form/__checkbox/form__checkbox.css);
 @import url(../blocks/form/__checkbox-label/form__checkbox-label.css);
+/* Notifications */
+@import url(../blocks/notifications/notifications.css);
+/* Notification */
+@import url(../blocks/notification/notification.css);
+@import url(../blocks/notification/__text-container/notification__text-container.css);
+@import url(../blocks/notification/__icon/notification__icon.css);
+@import url(../blocks/notification/__text/notification__text.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

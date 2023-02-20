@@ -2,5 +2,8 @@
   width: 100%;
   height: auto;
   flex-grow: 1;
+  align-items: center;
+  justify-content: center;
   overflow-y: scroll;
+  display: flex;
 }

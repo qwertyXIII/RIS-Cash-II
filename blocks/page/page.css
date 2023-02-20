@@ -26,8 +26,3 @@
   border: none;
   /* padding вокруг плашки */
 }
-
-
-*  {
-  transform: 3000ms !important;
-}

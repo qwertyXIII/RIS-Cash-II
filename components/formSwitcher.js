@@ -25,14 +25,14 @@ export function formSwitcher(switcher, selectorOne, selectorTwo) {
     formInputLocation.classList.add('form__input_disabled');
 
 
-    formButtonAccept.classList.add('form__input_disabled');
+    formButtonAccept.classList.add('form__input_disabled'); 
     formButtonIssue.classList.add('form__input_disabled');
 
     formInputKKT.closest('.form__input-container').classList.remove('form__input_disabled');
     formInputSN.closest('.form__input-container').classList.remove('form__input_disabled');
 
     if (!switcher.checked) {
-        formButtonIssue.classList.remove('form__input_disabled');
+        formButtonIssue.closest('.switchable').classList.remove('form__input_disabled');
         formInputLocation.classList.remove('form__input_disabled');
         if (selectorOne.value == 'forwarder') {
             formInputNote.closest('.switchable').classList.remove('form__input_disabled');
@@ -47,7 +47,7 @@ export function formSwitcher(switcher, selectorOne, selectorTwo) {
         }
 
     } else {
-        formButtonAccept.classList.remove('form__input_disabled');
+        formButtonAccept.closest('.switchable').classList.remove('form__input_disabled');
         formInputFrom.classList.remove('form__input_disabled');
         if (selectorTwo.value == 'repair') {
             formInputFn.closest('.switchable').classList.remove('form__input_disabled');

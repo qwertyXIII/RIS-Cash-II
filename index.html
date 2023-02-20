@@ -25,15 +25,15 @@
     </div>
 
     <div class="header__tabs">
-      <button class="header__tab">Главная</button>
-      <button class="header__tab">Все кассы</button>
-      <button class="header__tab">В ремонте</button>
-      <button class="header__tab">У экспедиторов</button>
-      <button class="header__tab">В магазине</button>
-      <button class="header__tab">Заканивается ФН</button>
-      <button class="header__tab">История</button>
-      <button class="header__tab">Экспедиторы</button>
-      <button class="header__tab">Принять/Выдать</button>
+      <button class="header__tab" id="main">Главная</button>
+      <button class="header__tab" id="allCash">Все кассы</button>
+      <button class="header__tab" id="inRepair">В ремонте</button>
+      <button class="header__tab" id="inForwarder">У экспедиторов</button>
+      <button class="header__tab" id="inShop">В магазине</button>
+      <button class="header__tab" id="endsFN">Заканивается ФН</button>
+      <button class="header__tab" id="history">История</button>
+      <button class="header__tab" id="forwarders">Экспедиторы</button>
+      <button class="header__tab" id="changeLocation">Принять/Выдать</button>
     </div>
 
     <div class="header__search-body">
@@ -45,13 +45,13 @@
 
   <main class="main">
 
-    <section class="news tab_state_closed">
+    <section class="tab-window news">
     </section>
 
-    <section class="elements tab_state_closed">
+    <section class="tab-window elements tab_state_closed">
     </section>
     
-    <section class="change-location">
+    <section class="tab-window change-location tab_state_closed">
       <form class="change-location__form form">
         <div class="form__column">
           <input class="form__input form__input-switch" type="checkbox" name="form-switch">
@@ -86,9 +86,11 @@
             <input class="form__checkbox form__checkbox-mains-charger" type="checkbox" id="mains-charger" name="mains-charger">
             <label class="form__checkbox-label" for="mains-charger">Сетевое зарядное утсройство</label>
           </div>
-          <button class="form__input form__send form__send-accept form__input_disabled">Принять</button>
+          <div class="form__button-container form__button-container-accept form__input_disabled switchable">
+            <button class="form__input form__reset"><ion-icon name="refresh-circle-outline"></ion-icon></button>
+            <button class="form__input form__send form__send-accept">Принять</button>
+          </div>
         </div>
-
         <div class="form__column">
           <select class="form__input form__input-location switchable">
             <option value="forwarder" class="form__option">Экспедитору</option>
@@ -117,21 +119,37 @@
             <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-defect" id="form-input-defect">
             <label class="form__input-prompt" for="form-input-defect">Дефект</label>
           </div>
-          <button class="form__input form__send form__send-issue switchable">Выдать</button>
+          <div class="form__button-container form__button-container-issue switchable">
+            <button class="form__input form__reset"><ion-icon name="refresh-circle-outline"></ion-icon></button>
+            <button class="form__input form__send form__send-issue">Выдать</button>
+          </div>
         </div>
       </form>
+    </section>
+
+    <section class="notifications">
     </section>
 
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.1.5 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.2.1 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon"
         name="bug-outline"></ion-icon></button>
   </footer>
 
-  <template id="news-tamplate">
-    <div class="news__element">
+  <template id="element-template-notification">
+    <div class="content notification">
+      <div class="notification__text-container">
+        <ion-icon class="notification__icon" name="checkmark-circle-outline"></ion-icon>
+        <p class="notification__text">Пример уведомления</p>
+      </div>
+      <div class="notification__bar"></div>
+    </div>
+  </template>
+
+  <template id="element-template-news">
+    <div class="content news__element">
       <h2 class="news__header">heading</h1>
         <p class="news__text">text</p>
         <p class="news__date">dd.mm.YYYY</p>
@@ -139,7 +157,7 @@
   </template>
 
   <template id="element-template-forwarder">
-    <div class="element">
+    <div class="content element">
       <div class="element__visible">
         <div class="element__visible-info">
           <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
@@ -161,7 +179,7 @@
   </template>
 
   <template id="element-template-repair">
-    <div class="element">
+    <div class="content element">
       <div class="element__visible">
         <div class="element__visible-info">
           <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
@@ -203,6 +221,8 @@
   <script type="module" src="./utils/constants.js"></script>
   <script type="module" src="./index.js"></script>
   <script type="module" src="./components/formSwitcher.js"></script>
+  <script type="module" src="./components/communicator.js"></script>
+  <script type="module" src="./components/contentLoader.js"></script>
 </body>
 
 </html>
