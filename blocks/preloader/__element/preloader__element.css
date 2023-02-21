@@ -1,0 +1,48 @@
+@keyframes preloader-animation {
+  0% {
+    left: 0;
+    top: 0;
+    width: 120px;
+  }
+  8% {
+    right: 0;
+    top: 0;
+    width: 50px;
+  }
+  16% {
+  }
+  100% {
+    color: red;
+    right: 0;
+  }
+}
+
+.preloader__element {
+  position: absolute;
+  background-color: cornsilk;
+  width: 50px;
+  top: 0;
+  left: 0;
+  height: 50px;
+  border-radius: 15px;
+}
+
+
+.preloader__element {
+  animation: preloader-animation 4000ms ease infinite; 
+
+}
+
+/*
+.preloader__element:nth-last-of-type(1) {
+  animation-delay: 200ms;
+}
+.preloader__element:nth-last-of-type(2) {
+  animation-delay: 200ms;
+  
+}
+.preloader__element:nth-last-of-type(3) {
+  animation-delay: 200ms;
+}
+
+*/

@@ -1,4 +1,7 @@
 .element__invisible_close {
-  height: 0;
   padding: 0;
+}
+
+.element__invisible_close .element__text {
+  font-size: 0;
 }

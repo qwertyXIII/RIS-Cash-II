@@ -5,15 +5,15 @@ export function contentLoader(type, parameters) {
   switch (type) {
     case 'news':
       getData(parameters).then((answer) => {
-        elementsContainer.innerHTML = ''
+        contentRemover(newsContainer, 'news__element')
         answer.answer.forEach(data => {
-          elementsContainer.append(createElementTypeNews(data))
+          newsContainer.append(createElementTypeNews(data))
         });
       });
       break;
     case 'element':
       getData(parameters).then((answer) => {
-        elementsContainer.innerHTML = ''
+        contentRemover(elementsContainer, 'element')
         answer.answer.forEach(data => {
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
@@ -27,39 +27,11 @@ export function contentLoader(type, parameters) {
         });
       });
       break;
-    case 'inRepair':
+    case 'forwarders':
       getData(parameters).then((answer) => {
-        elementsContainer.innerHTML = ''
+        contentRemover(elementsContainer, 'element')
         answer.answer.forEach(data => {
-          if (data.location == 'repair') {
-            elementsContainer.append(createElementTypeInRepair(data))
-          }
-        });
-      });
-      break;
-    case 'inShop':
-      getData(parameters).then((answer) => {
-        elementsContainer.innerHTML = ''
-        answer.answer.forEach(data => {
-          if (data.location == 'shop') {
-            elementsContainer.append(createElementTypeInShop(data))
-          }
-        });
-      });
-      break;
-    case 'anywhere':
-      getData(parameters).then((answer) => {
-        elementsContainer.innerHTML = ''
-        answer.answer.forEach(data => {
-          if (data.location == 'forwarder') {
-            elementsContainer.append(createElementTypeInForwarder(data))
-          } else
-            if (data.location == 'repair') {
-              elementsContainer.append(createElementTypeInRepair(data))
-            } else
-              if (data.location == 'shop') {
-                elementsContainer.append(createElementTypeInShop(data))
-              }
+          elementsContainer.append(createElementTypeNews(data))
         });
       });
       break;
@@ -139,4 +111,10 @@ function createElementTypeInRepair(data) {
     }
   })
   return element;
+}
+
+function contentRemover(container, selector) {
+  for (let e of container.querySelectorAll(`.${selector}`)) [
+    e.remove()
+  ]
 }

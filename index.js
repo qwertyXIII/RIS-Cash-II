@@ -21,6 +21,7 @@ formCheckboxSwitch.addEventListener("click", () => {
 /* события вкладок */
 mainTab.addEventListener("click", (e) => {
   closer(); opener(e, "news"); activTab = "news";
+  contentLoader ('news', {table: 'news'});
 });
 allCashTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements");
@@ -50,3 +51,7 @@ forwardersTab.addEventListener("click", (e) => {
 changeLocationTab.addEventListener("click", (e) => {
   closer(); opener(e, "change-location  ");
 });
+
+/* Открыть при подключении */
+contentLoader ('news', {table: 'news'});
+contentLoader ('element', {table: 'base'});

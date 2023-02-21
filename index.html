@@ -25,7 +25,7 @@
     </div>
 
     <div class="header__tabs">
-      <button class="header__tab" id="main">Главная</button>
+      <button class="header__tab header__tab_active" id="main">Главная</button>
       <button class="header__tab" id="allCash">Все кассы</button>
       <button class="header__tab" id="inRepair">В ремонте</button>
       <button class="header__tab" id="inForwarder">У экспедиторов</button>
@@ -130,10 +130,19 @@
     <section class="notifications">
     </section>
 
+    <section class="loading-screen">
+      <div class="preloader">
+        <div class="preloader__element"></div>
+        <div class="preloader__element"></div>
+        <div class="preloader__element"></div>
+      </div>
+      <p class="preloader__text">Текст сообщения</p>
+    </section>
+
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.2.2 [ALPHA]</p>
+    <p class="footer__text">RIS|Cash v0.2.3 [ALPHA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
@@ -163,6 +172,7 @@
           <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">У экспедитора</span> <span class="element__text element__text_data kkt-forwarder">ФИО экспедитора</span></p>
         </div>
         <div class="element__button-box">
+          <button class="element__button element__button-print"><ion-icon class="element__button-print-icon" name="print-outline"></ion-icon></button> 
           <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
           <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
           <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
@@ -182,15 +192,17 @@
       <div class="element__visible">
         <div class="element__visible-info">
           <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
-          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">В ремонте по заявке - </span><span class="element__text element__text_data kkt-number">S123123</span>, дефект - <span class="element__text element__text_data kkt-defect">Не включается</span></p>
+          <p class="element__text">Местонахождение оборудования: <span class="element__text element__text_data">В ремонте по заявке</span><span class="element__text element__text_data kkt-number">S123123</span></p>
         </div>
         <div class="element__button-box">
+          <button class="element__button element__button-print"><ion-icon class="element__button-print-icon" name="print-outline"></ion-icon></button> 
           <button class="element__button element__button-barcode"><ion-icon class="element__button-barcode-icon" name="barcode-outline"></ion-icon></button>
           <button class="element__button element__button-edit"><ion-icon class="element__button-edit-icon" name="create-outline"></ion-icon></button>
           <button class="element__button element__button-open"><ion-icon class="element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
         </div>
       </div>
       <div class="element__invisible element__invisible_close">
+        <p class="element__text">дефект: <span class="element__text element__text_data kkt-defect">Не включается</span></p>
         <p class="element__text">Срок действия ФН до: <span class="element__text element__text_data kkt-FN-validity-period">28.03.2023</span></p>
         <p class="element__text">Выдана: <span class="element__text element__text_data kkt-issued">22.11.2022</span></p>
       </div>

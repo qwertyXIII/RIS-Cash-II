@@ -45,9 +45,11 @@
 @import url(../blocks/element/__button-open-icon/_active/element__button-open-icon_active.css);
 @import url(../blocks/element/__button-edit-icon/element__button-edit-icon.css);
 @import url(../blocks/element/__button-barcode-icon/element__button-barcode-icon.css);
+@import url(../blocks/element/__button-print-icon/element__button-print-icon.css);
 @import url(../blocks/element/__button-open/element__button-open.css);
 @import url(../blocks/element/__button-edit/element__button-edit.css);
 @import url(../blocks/element/__button-barcode/element__button-barcode.css);
+@import url(../blocks/element/__button-print/element__button-print.css);
 @import url(../blocks/element/__invisible/element__invisible.css);
 @import url(../blocks/element/__invisible/_close/element__invisible_close.css);
 /* change-location */
@@ -75,6 +77,12 @@
 @import url(../blocks/notification/__text-container/notification__text-container.css);
 @import url(../blocks/notification/__icon/notification__icon.css);
 @import url(../blocks/notification/__text/notification__text.css);
+/* loading-screen */
+@import url(../blocks/loading-screen/loading-screen.css);
+/* preloader */
+@import url(../blocks/preloader/preloader.css);
+@import url(../blocks/preloader/__element/preloader__element.css);
+@import url(../blocks/preloader/__text/preloader__text.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);
