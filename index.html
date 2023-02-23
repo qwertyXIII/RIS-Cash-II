@@ -26,13 +26,21 @@
 
     <div class="header__tabs">
       <button class="header__tab header__tab_active" id="main">Главная</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="allCash">Все кассы</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="inRepair">В ремонте</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="inForwarder">У экспедиторов</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="inShop">В магазине</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="endsFN">Заканивается ФН</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="history">История</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="forwarders">Экспедиторы</button>
+      <div class="header__delimiter"></div>
       <button class="header__tab" id="changeLocation">Принять/Выдать</button>
     </div>
 
@@ -129,25 +137,39 @@
 
     <section class="notifications">
     </section>
-
-    <section class="loading-screen">
-      <div class="preloader">
-        <div class="preloader__element"></div>
-        <div class="preloader__element"></div>
-        <div class="preloader__element"></div>
-      </div>
-      <p class="preloader__text">Текст сообщения</p>
-    </section>
-
   </main>
 
+  <div class="loading-screen">
+    <div class="preloader">
+      <div class="preloader__element"></div>
+      <div class="preloader__element"></div>
+      <div class="preloader__element"></div>
+    </div>
+    <p class="preloader__text">Загрузка...</p>
+  </div>
+
+  <div class="authorisation">
+    <form action="" class="authorisation-form">
+      <h1 class="form__heading">Авторизация</h1>
+      <div class="form__input-container form__input-container_small">
+        <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-tabel form__input_small" id="form-input-tabel">
+        <label class="form__input-prompt" for="form-input-tabel">Табельный номер</label>
+      </div>
+      <!--<div class="form__input-container form__input-container_small">
+        <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-password form__input_small" id="form-input-password">
+        <label class="form__input-prompt" for="form-input-password">Пароль</label>
+      </div>-->
+      <button class="form__input form__send">Войти</button>
+    </form>
+  </div>
+
   <footer class="footer">
-    <p class="footer__text">RIS|Cash v0.2.3 [ALPHA]</p>
+    <p class="footer__text">RIScash II v0.4.0 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
   <template id="element-template-notification">
-    <div class="content notification">
+    <div class="content notification notification_closed">
       <div class="notification__text-container">
         <ion-icon class="notification__icon" name="checkmark-circle-outline"></ion-icon>
         <p class="notification__text">Пример уведомления</p>

@@ -1,4 +1,12 @@
 .news__header {
-  margin: 0 10px;
-  font-size: 24px;
+  position: absolute;
+  margin: 0;
+  font-size: 20px;
+  top: -20px;
+  left: 20px;
+  background-color: cornsilk;
+  border-radius: 10px;
+  padding: 5px;
+  color: black;
+  font-weight: 900;
 }

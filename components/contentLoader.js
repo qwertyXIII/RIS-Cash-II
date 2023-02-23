@@ -1,4 +1,4 @@
-import { elementsContainer, elementTemplateForwarder, elementTemplateNews, elementTemplateRepair, elementTemplateShop, newsContainer } from "../utils/constants.js";
+import { elementsContainer, elementTemplateForwarder, elementTemplateNews, elementTemplateRepair, elementTemplateShop, loadingScreen, newsContainer } from "../utils/constants.js";
 import { getData } from "./communicator.js";
 
 export function contentLoader(type, parameters) {
@@ -9,6 +9,7 @@ export function contentLoader(type, parameters) {
         answer.answer.forEach(data => {
           newsContainer.append(createElementTypeNews(data))
         });
+        loadingScreen.classList.add('loading-screen_disabled');
       });
       break;
     case 'element':
@@ -25,6 +26,7 @@ export function contentLoader(type, parameters) {
                 elementsContainer.append(createElementTypeInShop(data))
               }
         });
+        loadingScreen.classList.add('loading-screen_disabled');
       });
       break;
     case 'forwarders':
@@ -33,6 +35,7 @@ export function contentLoader(type, parameters) {
         answer.answer.forEach(data => {
           elementsContainer.append(createElementTypeNews(data))
         });
+        loadingScreen.classList.add('loading-screen_disabled');
       });
       break;
   }

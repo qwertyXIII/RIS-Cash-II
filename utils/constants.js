@@ -1,3 +1,6 @@
+
+/* форма выдачи\принятия */
+export const changeLocationForm = document.querySelector('.change-location__form');
 /* Инпуты формы */
 export const formInputKKT = document.querySelector('.form__input-kkt');
 export const formInputSN = document.querySelector('.form__input-sn');
@@ -28,6 +31,11 @@ export const endsFNTab = document.querySelector('#endsFN');
 export const historyTab = document.querySelector('#history');
 export const forwardersTab = document.querySelector('#forwarders');
 export const changeLocationTab = document.querySelector('#changeLocation');
+/* Кнопки в header */
+export const exitButton = document.querySelector('.header__exit-button');
+/* активный пользователь */
+export const user = document.querySelector('.header__user-name');
+export const userRole = document.querySelector('.header__role');
 /* вкладки */
 export const tabs = document.querySelectorAll('.tab-window');
 export const tabContainer = document.querySelector('.main');
@@ -40,4 +48,12 @@ export const elementTemplateNews = document.querySelector('#element-template-new
 export const elementTemplateForwarder = document.querySelector('#element-template-forwarder');
 export const elementTemplateRepair = document.querySelector('#element-template-repair');
 export const elementTemplateShop = document.querySelector('#element-template-shop');
-
+/* Контейнер уведомлений */
+export const notificationContainer = document.querySelector('.notifications');
+/* Загрузочный экран */
+export const loadingScreen = document.querySelector('.loading-screen');
+export const loadingScreenText = document.querySelector('.preloader__text');
+/* authorisation */
+export const authScreen = document.querySelector('.authorisation');
+export const authScreenForm = document.querySelector('.authorisation-form');
+export const authScreenFormInput = document.querySelector('.form__input-tabel');

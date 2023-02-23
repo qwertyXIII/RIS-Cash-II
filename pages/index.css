@@ -3,6 +3,7 @@
 @import url(../blocks/page/page.css);
 /* HEADER */
 @import url(../blocks/header/header.css);
+@import url(../blocks/header/__delimiter/header__delimiter.css);
 @import url(../blocks/header/__top-container/header__top-container.css);
 @import url(../blocks/header/__logo/header__logo.css);
 @import url(../blocks/header/__user/header__user.css);
@@ -36,7 +37,6 @@
 /* element */
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__visible/element__visible.css);
-@import url(../blocks/element/visible-info/element__visible-info.css);
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__text/_data/element__text_data.css);
 @import url(../blocks/element/__button-box/element__button-box.css);
@@ -59,10 +59,12 @@
 @import url(../blocks/form/__column/form__column.css);
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_small/form__input_small.css);
 @import url(../blocks/form/__reset/form__reset.css);
 @import url(../blocks/form/__send/form__send.css);
 @import url(../blocks/form/__input/_disabled/form__input_disabled.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
+@import url(../blocks/form/__input-container/_small/form__input-container_small.css);
 @import url(../blocks/form/__button-container/form__button-container.css);
 @import url(../blocks/form/__input-prompt/form__input-prompt.css);
 @import url(../blocks/form/__input-switch/form__input-switch.css);
@@ -74,15 +76,22 @@
 @import url(../blocks/notifications/notifications.css);
 /* Notification */
 @import url(../blocks/notification/notification.css);
+@import url(../blocks/notification/_closed/notification_closed.css);
 @import url(../blocks/notification/__text-container/notification__text-container.css);
 @import url(../blocks/notification/__icon/notification__icon.css);
 @import url(../blocks/notification/__text/notification__text.css);
 /* loading-screen */
 @import url(../blocks/loading-screen/loading-screen.css);
+@import url(../blocks/loading-screen/_disabled/loading-screen_disabled.css);
 /* preloader */
 @import url(../blocks/preloader/preloader.css);
 @import url(../blocks/preloader/__element/preloader__element.css);
 @import url(../blocks/preloader/__text/preloader__text.css);
+/* authorisation */
+@import url(../blocks/authorisation/authorisation.css);
+@import url(../blocks/authorisation/_closed/authorisation_closed.css);
+@import url(../blocks/form/__heading/form__heading.css);
+@import url(../blocks/authorisation-form/authorisation-form.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

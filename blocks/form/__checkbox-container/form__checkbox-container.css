@@ -6,7 +6,7 @@
   transition: 200ms;
 }
 
-.form__checkbox-container:last-of-type {
+.form__checkbox-container:nth-last-of-type(2) {
   margin: 0 0 0 13px;
   padding: 0;
 }

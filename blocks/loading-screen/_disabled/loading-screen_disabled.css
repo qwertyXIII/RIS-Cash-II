@@ -1,0 +1,7 @@
+.loading-screen_disabled {
+  opacity: 0;
+  visibility: hidden;
+}
+.loading-screen_disabled * {
+  opacity: 0;
+}

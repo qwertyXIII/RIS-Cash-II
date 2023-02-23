@@ -1,48 +1,44 @@
 @keyframes preloader-animation {
   0% {
-    left: 0;
-    top: 0;
-    width: 120px;
+    margin: 0;
+
   }
-  8% {
-    right: 0;
-    top: 0;
-    width: 50px;
+  25% {
+    margin: 0 0 0 40px;
   }
-  16% {
+  50% {
+    margin: 40px 0 0 40px;
+  }
+  75% {
+    margin: 40px 40px 0 0;
   }
   100% {
-    color: red;
-    right: 0;
+    margin: 0;
+
   }
 }
 
 .preloader__element {
   position: absolute;
   background-color: cornsilk;
-  width: 50px;
-  top: 0;
+  width: 30px;
+  right: 0;
   left: 0;
-  height: 50px;
-  border-radius: 15px;
+  height: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 
 .preloader__element {
-  animation: preloader-animation 4000ms ease infinite; 
+  animation: preloader-animation 3000ms ease infinite; 
 
 }
 
-/*
-.preloader__element:nth-last-of-type(1) {
-  animation-delay: 200ms;
-}
 .preloader__element:nth-last-of-type(2) {
-  animation-delay: 200ms;
+  animation-delay: 1000ms;
   
 }
 .preloader__element:nth-last-of-type(3) {
-  animation-delay: 200ms;
+  animation-delay: 2000ms;
 }
-
-*/
