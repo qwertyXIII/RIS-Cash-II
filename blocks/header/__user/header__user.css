@@ -1,5 +1,6 @@
 .header__user {
   color: cornsilk;
+  min-width: 70px;
   width: max-content;
   margin: 0 0 0 auto;
   position: relative;

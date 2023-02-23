@@ -1,5 +1,5 @@
 // Функция отправки запроса данных с сервера
-const token = 'AKfycbyXQ7JPLttWRb6d9_JcCc67zLFD5FwPtyws2HU8vIE68k6WDoIFurSeMVIITx39nh4';
+const token = 'AKfycbx4T3ZewDPB7IaYTvlz4EYsWlDMGBw_cP0r4dBVsl5HzGEj0bt-saiMbNTXYS27a0rA';
 
 export let getData = function (parameters) {
 

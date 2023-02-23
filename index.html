@@ -137,14 +137,10 @@
     </section>
   </main>
 
-  <div class="loading-screen">
-    <div class="preloader">
-      <div class="preloader__element"></div>
-      <div class="preloader__element"></div>
-      <div class="preloader__element"></div>
-    </div>
-    <p class="preloader__text">Загрузка...</p>
-  </div>
+  <footer class="footer">
+    <p class="footer__text">RIScash II v0.7.3 [BETA]</p>
+    <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
+  </footer>
 
   <div class="popup popup_closed">
     <form class="bug-report">
@@ -165,6 +161,28 @@
       <p class="form__subtext">Нажмите "ESC" для выхода</p>
     </form>
   </div>
+<!--
+  <div class="popup popup_closed">
+    <form class="settings">
+      <h1 class="form__heading">Настройки</h1>
+      <div class="form__input-container">
+        <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-bug-theme" id="form-input-bug-theme" list="bug-theme">
+        <label class="form__input-prompt" for="form-input-bug-theme">Тема:</label>
+      </div>
+      <textarea class="form__input form__input-bug-textarea" cols="30" rows="10" placeholder="О чем вы хотите сообщить?"></textarea>
+      <button class="form__input form__send form__send-report">Отправить<div class="form__preloader form__preloader_disabled"></div></button>
+      <p class="form__subtext">Нажмите "ESC" для выхода</p>
+    </form>
+  </div>
+-->
+  <div class="loading-screen">
+    <div class="preloader">
+      <div class="preloader__element"></div>
+      <div class="preloader__element"></div>
+      <div class="preloader__element"></div>
+    </div>
+    <p class="preloader__text">Загрузка...</p>
+  </div>
 
   <div class="authorisation">
     <form action="" class="authorisation-form">
@@ -180,11 +198,6 @@
       <button class="form__input form__send">Войти</div></button>
     </form>
   </div>
-
-  <footer class="footer">
-    <p class="footer__text">RIScash II v0.7.2 [BETA]</p>
-    <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
-  </footer>
 
   <template id="element-template-notification">
     <div class="content notification notification_closed">

@@ -11,7 +11,7 @@
   height: 30px;
   border-radius: 10px;
   margin: 0 0 0 10px;
-  transition: 200ms;
+  transition: 500ms;
   cursor: pointer;
   position: relative;
 }

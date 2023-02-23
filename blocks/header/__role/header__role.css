@@ -2,8 +2,9 @@
   position: absolute;
   font-size: 12px;
   margin: 0;
-  top: 26px;
+  top: 20px;
   width: 100%;
   left: 0;
   color: gray;
+  min-width: max-content;
 }

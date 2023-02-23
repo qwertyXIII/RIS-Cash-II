@@ -5,12 +5,17 @@
   }
   25% {
     margin: 0 0 0 40px;
+    border-radius: 10px;
   }
   50% {
     margin: 40px 0 0 40px;
+    border-radius: 3px;
   }
   75% {
     margin: 40px 40px 0 0;
+    border-radius: 15px;
+    background-color: transparent;
+    outline: #fff8dc 1px solid;
   }
   100% {
     margin: 0;
@@ -26,6 +31,7 @@
   left: 0;
   height: 30px;
   border-radius: 10px;
+  outline: transparent 1px solid;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 

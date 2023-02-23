@@ -3,7 +3,9 @@
 
 import { formCheckboxCarCahrger, formCheckboxMainsCahrger, formCheckboxSwitch, formInputBid, formInputDefect, formInputFn, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputReader, formInputSendAccept, formInputSendIssue, formInputSN } from "../utils/constants.js"
 import { addNotifications } from "./addNotifications.js";
+import { activeUser } from "./authorisation.js";
 import { changeData } from "./communicator.js";
+import { printReceiptForwarder, printReceiptRepair } from "./printRceipt.js";
 
 export function changeLocationGive() {
   formInputSendIssue.classList.add('form__send_disabled')
@@ -54,6 +56,11 @@ export function changeLocationGive() {
     for (let e of answer.answerText) {
       addNotifications(answer.answer, e)
     }
+    if (answer.answer == 'ok' && obj.location == 'forwarder') {
+      printReceiptForwarder(obj, activeUser.name);
+    } else if (answer.answer == 'ok' && obj.location == 'repair') {
+      printReceiptRepair(obj, activeUser.name);
+    }
     formInputSendIssue.classList.remove('form__send_disabled')
     formInputSendIssue.removeAttribute('disabled');
     formCheckboxSwitch.removeAttribute('disabled');
@@ -71,7 +78,7 @@ export function changeLocationGet() {
   obj.sn = formInputSN.value;
   obj.location = formInputFrom.value;
 
-  
+
   if (!formValidator(['form__input-kkt', 'form__input-sn'])) {
     addNotifications('error', 'Заполните все необходимые поля!')
     formInputSendIssue.classList.remove('form__send_disabled')

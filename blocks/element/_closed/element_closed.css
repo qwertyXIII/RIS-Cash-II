@@ -1,21 +1,21 @@
 .element_closed {
   padding: 0 !important;
   margin: 0 !important;
-  filter: blur(3px);
+  opacity: 0 !important;
+  filter: opacity(0);
 }
 
 .element_closed * {
   padding: 0 !important;
   margin: 0 !important;
   font-size: 0 !important;
+  opacity: 0 !important;
 }
 
 .element_closed .element__button  {
-  width: 0;
-  height: 0;
-}
-
-.element_closed .element__text  {
-  margin: 0 0 0 200px !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 200px 0 auto !important;
+  opacity: 0 !important;
 }
 

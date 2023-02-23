@@ -1,5 +1,7 @@
 import { elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateNews, elementTemplateRepair, elementTemplateShop, formForwardersDataList, formKktDataList, loadingScreen, newsContainer } from "../utils/constants.js";
+import { activeUser } from "./authorisation.js";
 import { getData } from "./communicator.js";
+import { printReceiptForwarder } from "./printRceipt.js";
 
 export let elements;
 export let forwarders;
@@ -86,6 +88,14 @@ export function createElementTypeInForwarder(data) {
       e.querySelector('.element__invisible').classList.toggle('element__invisible_close');
       e.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
     }
+  })
+  element.querySelector('.element__button-print').addEventListener('click', () => {
+    for (let e of forwarders) {
+      if (e.name == data.forwarder) {
+        data.number = e.number
+      }
+    }
+    printReceiptForwarder(data, activeUser.name);
   })
   setTimeout(() => {
     element.classList.remove('element_closed');
