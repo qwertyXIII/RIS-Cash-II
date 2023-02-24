@@ -1,0 +1,8 @@
+.form__preloader_disabled {
+  margin: 0;
+  opacity: 0;
+  border: none;
+  scale: 0;
+  width: 0;
+  height: 0;
+}

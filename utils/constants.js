@@ -1,6 +1,8 @@
 
 /* форма выдачи\принятия */
 export const changeLocationForm = document.querySelector('.change-location__form');
+/* Все импуты */
+export const formInputs = document.querySelectorAll('.form__input');
 /* Инпуты формы */
 export const formInputKKT = document.querySelector('.form__input-kkt');
 export const formInputSN = document.querySelector('.form__input-sn');
@@ -13,6 +15,12 @@ export const formInputBid = document.querySelector('.form__input-bid');
 export const formInputDefect = document.querySelector('.form__input-defect');
 export const formInputFrom = document.querySelector('.form__input-from');
 export const formInputFn = document.querySelector('.form__input-fn');
+/* Дата-листы формы */
+export const formKktDataList = document.querySelector('#kkt-list');
+export const formForwardersDataList = document.querySelector('#forwarder-list');
+/* Кнопки формы */
+export const formInputSendIssue = document.querySelector('.form__send-issue');
+export const formInputSendAccept = document.querySelector('.form__send-accept');
 /* чекбоксы */
 export const formCheckboxSwitch = document.querySelector('.form__input-switch');
 export const formCheckboxCarCahrger = document.querySelector('.form__checkbox-car-charger');
@@ -48,6 +56,7 @@ export const elementTemplateNews = document.querySelector('#element-template-new
 export const elementTemplateForwarder = document.querySelector('#element-template-forwarder');
 export const elementTemplateRepair = document.querySelector('#element-template-repair');
 export const elementTemplateShop = document.querySelector('#element-template-shop');
+export const elementTemplateForwarderName = document.querySelector('#element-template-forwarder-name');
 /* Контейнер уведомлений */
 export const notificationContainer = document.querySelector('.notifications');
 /* Загрузочный экран */
@@ -57,3 +66,6 @@ export const loadingScreenText = document.querySelector('.preloader__text');
 export const authScreen = document.querySelector('.authorisation');
 export const authScreenForm = document.querySelector('.authorisation-form');
 export const authScreenFormInput = document.querySelector('.form__input-tabel');
+/* Поиск */
+export const searchInput = document.querySelector('.header__search-input');
+export const searchButton = document.querySelector('.header__search-button');

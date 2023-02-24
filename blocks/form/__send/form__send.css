@@ -2,4 +2,7 @@
     font-weight: 900;
     width: 230px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

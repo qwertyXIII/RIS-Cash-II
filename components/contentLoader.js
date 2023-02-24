@@ -1,5 +1,8 @@
-import { elementsContainer, elementTemplateForwarder, elementTemplateNews, elementTemplateRepair, elementTemplateShop, loadingScreen, newsContainer } from "../utils/constants.js";
+import { elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateNews, elementTemplateRepair, elementTemplateShop, formForwardersDataList, formKktDataList, loadingScreen, newsContainer } from "../utils/constants.js";
 import { getData } from "./communicator.js";
+
+export let elements;
+export let forwarders;
 
 export function contentLoader(type, parameters) {
   switch (type) {
@@ -14,8 +17,11 @@ export function contentLoader(type, parameters) {
       break;
     case 'element':
       getData(parameters).then((answer) => {
+        elements = answer.answer;
         contentRemover(elementsContainer, 'element')
+        formKktDataList.innerHTML = ''
         answer.answer.forEach(data => {
+          formKktDataList.prepend(new Option(data.kkt));
           if (data.location == 'forwarder') {
             elementsContainer.append(createElementTypeInForwarder(data))
           } else
@@ -31,9 +37,12 @@ export function contentLoader(type, parameters) {
       break;
     case 'forwarders':
       getData(parameters).then((answer) => {
+        forwarders = answer.answer;
         contentRemover(elementsContainer, 'element')
+        formForwardersDataList.innerHTML = ''
         answer.answer.forEach(data => {
-          elementsContainer.append(createElementTypeNews(data))
+          formForwardersDataList.prepend(new Option(data.name));
+          elementsContainer.append(createElementTypeForwarder(data))
         });
         loadingScreen.classList.add('loading-screen_disabled');
       });
@@ -49,7 +58,7 @@ function createElementTypeNews(data) {
   element.querySelector('.news__date').textContent = data.date;
   return element;
 }
-function createElementTypeInForwarder(data) {
+export function createElementTypeInForwarder(data) {
   let element = elementTemplateForwarder.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
@@ -74,7 +83,7 @@ function createElementTypeInForwarder(data) {
   return element;
 }
 
-function createElementTypeInShop(data) {
+export function createElementTypeInShop(data) {
   let element = elementTemplateShop.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
@@ -94,7 +103,7 @@ function createElementTypeInShop(data) {
   })
   return element;
 }
-function createElementTypeInRepair(data) {
+export function createElementTypeInRepair(data) {
   let element = elementTemplateRepair.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
@@ -116,7 +125,15 @@ function createElementTypeInRepair(data) {
   return element;
 }
 
-function contentRemover(container, selector) {
+export function createElementTypeForwarder(data) {
+  let element = elementTemplateForwarderName.content.querySelector('.content').cloneNode(true);
+  element.classList.remove('content');
+  element.querySelector('.forwarder-name').textContent = data.name;
+  element.querySelector('.forwarder-number').textContent = data.number;
+  return element;
+}
+
+export function contentRemover(container, selector) {
   for (let e of container.querySelectorAll(`.${selector}`)) [
     e.remove()
   ]

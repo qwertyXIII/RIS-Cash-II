@@ -56,12 +56,16 @@
 @import url(../blocks/change-location/change-location.css);
 /* form */
 @import url(../blocks/form/form.css);
+@import url(../blocks/form/__preloader/form__preloader.css);
+@import url(../blocks/form/__preloader/_disabled/form__preloader_disabled.css);
 @import url(../blocks/form/__column/form__column.css);
 @import url(../blocks/form/__placeholder/form__placeholder.css);
 @import url(../blocks/form/__input/form__input.css);
+@import url(../blocks/form/__input/_wrong/form__input_wrong.css);
 @import url(../blocks/form/__input/_small/form__input_small.css);
 @import url(../blocks/form/__reset/form__reset.css);
 @import url(../blocks/form/__send/form__send.css);
+@import url(../blocks/form/__send/_disabled/form__send_disabled.css);
 @import url(../blocks/form/__input/_disabled/form__input_disabled.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
 @import url(../blocks/form/__input-container/_small/form__input-container_small.css);

@@ -1,5 +1,5 @@
 // Функция отправки запроса данных с сервера
-const token = 'AKfycbxqUyJPFqd-75JVhaKelFFm6MljdRcMt6_0YZUnIZ4tW3KhFmKGmX-EFsHPgpF_ZjY';
+const token = 'AKfycbyXQ7JPLttWRb6d9_JcCc67zLFD5FwPtyws2HU8vIE68k6WDoIFurSeMVIITx39nh4';
 
 export let getData = function (parameters) {
 
@@ -39,8 +39,6 @@ export let changeData = function (parameters) {
   url.searchParams.append('table', parameters.table);
   url.searchParams.append('action', parameters.action);
   url.searchParams.append('data', JSON.stringify(parameters.data));
-
-  console.log(url);
 
   return new Promise(function (resolve, reject) {
     let xhttp = new XMLHttpRequest();

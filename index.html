@@ -46,8 +46,7 @@
 
     <div class="header__search-body">
       <input type="text" class="header__search-input">
-      <button class="header__search-button">Поиск <ion-icon class="header__search-icon"
-          name="search-outline"></ion-icon></button>
+      <button class="header__search-button">Поиск <ion-icon class="header__search-icon" name="search-outline"></ion-icon></button>
     </div>
   </header>
 
@@ -68,14 +67,13 @@
             <option value="repair" class="form__option">Из ремонта</option>
           </select>
           <div class="form__input-container">
-            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-kkt" id="form-input-kkt" list="kkt-list">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-kkt" id="form-input-kkt" list="kkt-list" minlength="16" maxlength="16">
             <label class="form__input-prompt" for="form-input-kkt">ККТ кассы</label>
             <datalist id="kkt-list">
-              <option>0000000000001234</option>
             </datalist>  
           </div>
           <div class="form__input-container">
-            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-sn" id="form-input-sn">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-sn" id="form-input-sn" minlength="10" maxlength="10">
             <label class="form__input-prompt" for="form-input-sn">S/N Кассы</label>
           </div>
           <div class="form__input-container switchable form__input_disabled">
@@ -96,7 +94,7 @@
           </div>
           <div class="form__button-container form__button-container-accept form__input_disabled switchable">
             <button class="form__input form__reset"><ion-icon name="refresh-circle-outline"></ion-icon></button>
-            <button class="form__input form__send form__send-accept">Принять</button>
+            <button class="form__input form__send form__send-accept">Принять<div class="form__preloader form__preloader_disabled"></div></button>
           </div>
         </div>
         <div class="form__column">
@@ -105,7 +103,7 @@
             <option value="repair" class="form__option">В ремонт</option>
           </select>
           <div class="form__input-container switchable">
-            <input type="text" placeholder=" " autocomplete="off" class=" form__input form__input-name" id="form-input-name" list="forwarder-list">
+            <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-name" id="form-input-name" list="forwarder-list">
             <label class="form__input-prompt" for="form-input-name">ФИО Экспедитора</label>
             <datalist id="forwarder-list">
               <option>Экспедиторов Экспедитор Экспедиторович</option>
@@ -129,7 +127,7 @@
           </div>
           <div class="form__button-container form__button-container-issue switchable">
             <button class="form__input form__reset"><ion-icon name="refresh-circle-outline"></ion-icon></button>
-            <button class="form__input form__send form__send-issue">Выдать</button>
+            <button class="form__input form__send form__send-issue">Выдать<div class="form__preloader form__preloader_disabled"></div></button>
           </div>
         </div>
       </form>
@@ -159,12 +157,12 @@
         <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-password form__input_small" id="form-input-password">
         <label class="form__input-prompt" for="form-input-password">Пароль</label>
       </div>-->
-      <button class="form__input form__send">Войти</button>
+      <button class="form__input form__send">Войти</div></button>
     </form>
   </div>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.4.1 [BETA]</p>
+    <p class="footer__text">RIScash II v0.5.1 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
@@ -183,6 +181,17 @@
       <h2 class="news__header">heading</h1>
         <p class="news__text">text</p>
         <p class="news__date">dd.mm.YYYY</p>
+    </div>
+  </template>
+
+  <template id="element-template-forwarder-name">
+    <div class="content element">
+      <div class="element__visible">
+        <div class="element__visible-info">
+          <p class="element__text">ФИО: <span class="element__text element__text_data forwarder-name">test</span></p>
+          <p class="element__text">Номер: <span class="element__text element__text_data forwarder-number">ФИО экспедитора</span></p>
+        </div>
+      </div>
     </div>
   </template>
 

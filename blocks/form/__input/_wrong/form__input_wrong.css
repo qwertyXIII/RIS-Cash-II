@@ -1,0 +1,18 @@
+@keyframes form-wrong-animation {
+  0% {
+    outline: 2px transparent solid;
+  } 25% {
+    outline: 2px red solid;
+  } 50% {
+    outline: 2px transparent solid;
+  } 75% {
+    outline: 2px red solid;
+  } 100% {
+    outline: 2px transparent solid;
+  }
+}
+
+.form__input_wrong {
+  animation: form-wrong-animation 1000ms ease infinite;
+  transition: 200ms;
+}

@@ -1,0 +1,8 @@
+.form__send_disabled {
+  color: gray;
+  outline: 0;
+  cursor: wait;
+}
+.form__send_disabled:hover {
+  outline: none;
+}
