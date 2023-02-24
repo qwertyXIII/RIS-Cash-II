@@ -24,8 +24,10 @@ formCheckboxSwitch.addEventListener("click", () => {
 searchButton.addEventListener("click", () => {
   search(searchInput.value);
 });
-searchInput.addEventListener("keyup", () => {
-  search(searchInput.value);
+searchInput.addEventListener("keyup", (e) => {
+  if (e.key === "Enter") {
+    search(searchInput.value);
+  }
 });
 
 /* События кнопок в хедере */
@@ -69,17 +71,23 @@ endsFNTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements"); activeTab = 'endsFN';
 
   loadingScreen.classList.remove('loading-screen_disabled');
-  loadingScreenText.textContent = 'Загрузка касс, у который заканчивается срок действия ФН...'
+  loadingScreenText.textContent = 'Пока-что эта функция недоступна.'
+  setTimeout(() => {
+    loadingScreen.classList.add('loading-screen_disabled');
+  }, 1000);
 });
 historyTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements"); activeTab = 'history';
 
   loadingScreen.classList.remove('loading-screen_disabled');
-  loadingScreenText.textContent = 'Загрузка истории...'
+  loadingScreenText.textContent = 'Пока-что эта функция недоступна.';
+  setTimeout(() => {
+    loadingScreen.classList.add('loading-screen_disabled');
+  }, 1000);
 });
 forwardersTab.addEventListener("click", (e) => {
   closer(); opener(e, "elements"); activeTab = 'forwarders';
-  contentLoader('forwarders', { table: 'forwarders'});
+  contentLoader('forwarders', { table: 'forwarders' });
   loadingScreen.classList.remove('loading-screen_disabled');
   loadingScreenText.textContent = 'Загрузка экспедиторов...'
 });
@@ -101,7 +109,7 @@ authScreenForm.addEventListener('submit', (e) => {
 changeLocationForm.addEventListener('submit', (e) => {
   e.preventDefault();
   if (!formCheckboxSwitch.checked) {
-  changeLocationGive();
+    changeLocationGive();
   } else {
     changeLocationGet();
   }

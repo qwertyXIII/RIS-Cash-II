@@ -1,5 +1,6 @@
 .element {
   min-width: 99vw;
+  transition: 400ms;
 }
 
 .element:nth-of-type(2n) {

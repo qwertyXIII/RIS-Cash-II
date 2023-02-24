@@ -4,4 +4,5 @@
 
 .element__invisible_close .element__text {
   font-size: 0;
+  margin: -10px 0 0 100px;
 }

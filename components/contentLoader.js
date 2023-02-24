@@ -5,12 +5,13 @@ export let elements;
 export let forwarders;
 
 export function contentLoader(type, parameters) {
+  let timeOut = 1
   switch (type) {
     case 'news':
       getData(parameters).then((answer) => {
         contentRemover(newsContainer, 'news__element')
         answer.answer.forEach(data => {
-          newsContainer.append(createElementTypeNews(data))
+          newsContainer.append(createElementTypeNews(data));
         });
         loadingScreen.classList.add('loading-screen_disabled');
       });
@@ -22,15 +23,18 @@ export function contentLoader(type, parameters) {
         formKktDataList.innerHTML = ''
         answer.answer.forEach(data => {
           formKktDataList.prepend(new Option(data.kkt));
-          if (data.location == 'forwarder') {
-            elementsContainer.append(createElementTypeInForwarder(data))
-          } else
-            if (data.location == 'repair') {
-              elementsContainer.append(createElementTypeInRepair(data))
+          setTimeout(() => {
+            if (data.location == 'forwarder') {
+              elementsContainer.append(createElementTypeInForwarder(data));
             } else
-              if (data.location == 'shop') {
-                elementsContainer.append(createElementTypeInShop(data))
-              }
+              if (data.location == 'repair') {
+                elementsContainer.append(createElementTypeInRepair(data));
+              } else
+                if (data.location == 'shop') {
+                  elementsContainer.append(createElementTypeInShop(data));
+                }
+          }, timeOut);
+          timeOut += 60;
         });
         loadingScreen.classList.add('loading-screen_disabled');
       });
@@ -38,11 +42,14 @@ export function contentLoader(type, parameters) {
     case 'forwarders':
       getData(parameters).then((answer) => {
         forwarders = answer.answer;
-        contentRemover(elementsContainer, 'element')
-        formForwardersDataList.innerHTML = ''
+        contentRemover(elementsContainer, 'element');
+        formForwardersDataList.innerHTML = '';
         answer.answer.forEach(data => {
           formForwardersDataList.prepend(new Option(data.name));
-          elementsContainer.append(createElementTypeForwarder(data))
+          setTimeout(() => {
+            elementsContainer.append(createElementTypeForwarder(data));
+          }, timeOut);
+          timeOut += 60;
         });
         loadingScreen.classList.add('loading-screen_disabled');
       });
@@ -80,6 +87,9 @@ export function createElementTypeInForwarder(data) {
       e.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
     }
   })
+  setTimeout(() => {
+    element.classList.remove('element_closed');
+  }, 100);
   return element;
 }
 
@@ -101,6 +111,9 @@ export function createElementTypeInShop(data) {
       e.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
     }
   })
+  setTimeout(() => {
+    element.classList.remove('element_closed');
+  }, 100);
   return element;
 }
 export function createElementTypeInRepair(data) {
@@ -122,6 +135,9 @@ export function createElementTypeInRepair(data) {
       e.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
     }
   })
+  setTimeout(() => {
+    element.classList.remove('element_closed');
+  }, 100);
   return element;
 }
 
@@ -130,11 +146,17 @@ export function createElementTypeForwarder(data) {
   element.classList.remove('content');
   element.querySelector('.forwarder-name').textContent = data.name;
   element.querySelector('.forwarder-number').textContent = data.number;
+  setTimeout(() => {
+    element.classList.remove('element_closed');
+  }, 100);
   return element;
 }
 
 export function contentRemover(container, selector) {
-  for (let e of container.querySelectorAll(`.${selector}`)) [
-    e.remove()
-  ]
+  for (let e of container.querySelectorAll(`.${selector}`)) {
+    e.classList.add('element_closed');
+    setTimeout(() => {
+      e.remove()
+    }, 100)
+  }
 }

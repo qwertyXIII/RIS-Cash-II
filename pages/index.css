@@ -36,6 +36,7 @@
 @import url(../blocks/elements/elements.css);
 /* element */
 @import url(../blocks/element/element.css);
+@import url(../blocks/element/_closed/element_closed.css);
 @import url(../blocks/element/__visible/element__visible.css);
 @import url(../blocks/element/__text/element__text.css);
 @import url(../blocks/element/__text/_data/element__text_data.css);
