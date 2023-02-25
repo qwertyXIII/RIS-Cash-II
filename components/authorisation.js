@@ -2,14 +2,14 @@ import { authScreen, loadingScreen, loadingScreenText, user, userRole } from "..
 import { addNotifications } from "./addNotifications.js";
 import { getData } from "./communicator.js"
 
-let activeUser;
+export let activeUser;
 
 export function authorisation(parameter) {
   loadingScreenText.textContent = `Загрузка...`;
 
   getData({ table: 'users', user: parameter }).then((answer) => {
     if (answer.answer !== 'error') {
-      activeUser = answer.answer;
+      activeUser = answer.answer[0];
       user.textContent = answer.answer[0].name;
       userRole.textContent = answer.answer[0].role;
       switch (answer.answer[0].role) {

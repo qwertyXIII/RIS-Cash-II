@@ -57,6 +57,7 @@
 @import url(../blocks/change-location/change-location.css);
 /* form */
 @import url(../blocks/form/form.css);
+@import url(../blocks/form/__subtext/form__subtext.css);
 @import url(../blocks/form/__preloader/form__preloader.css);
 @import url(../blocks/form/__preloader/_disabled/form__preloader_disabled.css);
 @import url(../blocks/form/__column/form__column.css);
@@ -69,6 +70,7 @@
 @import url(../blocks/form/__send/_disabled/form__send_disabled.css);
 @import url(../blocks/form/__input/_disabled/form__input_disabled.css);
 @import url(../blocks/form/__input-container/form__input-container.css);
+@import url(../blocks/form/__input-bug-textarea/form__input-bug-textarea.css);
 @import url(../blocks/form/__input-container/_small/form__input-container_small.css);
 @import url(../blocks/form/__button-container/form__button-container.css);
 @import url(../blocks/form/__input-prompt/form__input-prompt.css);
@@ -97,6 +99,11 @@
 @import url(../blocks/authorisation/_closed/authorisation_closed.css);
 @import url(../blocks/form/__heading/form__heading.css);
 @import url(../blocks/authorisation-form/authorisation-form.css);
+/* popup */
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/_closed/popup_closed.css);
+/* bug-report */
+@import url(../blocks/bug-report/bug-report.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

@@ -146,6 +146,26 @@
     <p class="preloader__text">Загрузка...</p>
   </div>
 
+  <div class="popup popup_closed">
+    <form class="bug-report">
+      <h1 class="form__heading">Сообщить об ошибке</h1>
+      <div class="form__input-container">
+        <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-bug-theme" id="form-input-bug-theme" list="bug-theme">
+        <label class="form__input-prompt" for="form-input-bug-theme">Тема:</label>
+        <datalist id="bug-theme">
+          <option>Предложение</option>
+          <option>Ошибка внешнего вида</option>
+          <option>Ошибка при выдачи или принятии кассы</option>
+          <option>Не правильное отображение данных</option>
+          <option>Другое</option>
+        </datalist> 
+      </div>
+      <textarea class="form__input form__input-bug-textarea" cols="30" rows="10" placeholder="О чем вы хотите сообщить?"></textarea>
+      <button class="form__input form__send form__send-report">Отправить<div class="form__preloader form__preloader_disabled"></div></button>
+      <p class="form__subtext">Нажмите "ESC" для выхода</p>
+    </form>
+  </div>
+
   <div class="authorisation">
     <form action="" class="authorisation-form">
       <h1 class="form__heading">Авторизация</h1>
@@ -162,7 +182,7 @@
   </div>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.6.2 [BETA]</p>
+    <p class="footer__text">RIScash II v0.7.2 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 

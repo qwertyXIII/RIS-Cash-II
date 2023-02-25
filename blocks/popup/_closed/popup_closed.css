@@ -1,0 +1,9 @@
+.popup_closed {
+  visibility: hidden;
+  opacity: o;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+}
+.popup_closed * {
+  opacity: 0;
+}

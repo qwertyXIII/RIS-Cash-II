@@ -66,6 +66,13 @@ export const loadingScreenText = document.querySelector('.preloader__text');
 export const authScreen = document.querySelector('.authorisation');
 export const authScreenForm = document.querySelector('.authorisation-form');
 export const authScreenFormInput = document.querySelector('.form__input-tabel');
+/* report button */
+export const reportButton = document.querySelector('.footer__report-button');
+/* report */
+export const reportForm = document.querySelector('.bug-report');
+export const reportFormInputTheme = document.querySelector('.form__input-bug-theme');
+export const reportFormInputText = document.querySelector('.form__input-bug-textarea');
+export const reportFormSend = document.querySelector('.form__send-report');
 /* Поиск */
 export const searchInput = document.querySelector('.header__search-input');
 export const searchButton = document.querySelector('.header__search-button');

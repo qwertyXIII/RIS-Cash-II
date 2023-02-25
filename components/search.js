@@ -25,16 +25,15 @@ export function search(searchText) {
     case 'history':
       el = el.filter(e => e.kkt.includes(searchText) || e.sn.includes(searchText) || e.number.includes(searchText) || e.defect.includes(searchText) || e.forwarder.includes(searchText));
       break;
-    /*case 'forwarders':
-      console.log(forw);
-      forw = forw.filter(e => console.log(e) || e.number.includes(searchText));
+    case 'forwarders':
+      forw = forw.filter(e => e.name.toString().includes(searchText)|| e.number.toString().includes(searchText));
       for (let element of el) {
         setTimeout(() => {
           elementsContainer.append(createElementTypeForwarder(element));
         }, timeOut);
         timeOut += 60;
       }
-      break;*/ // выдает ошибку 
+      break; // выдает ошибку 
   }
 }
 

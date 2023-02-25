@@ -1,11 +1,14 @@
-import { authorisation } from "./components/authorisation.js";
+import { addNotifications } from "./components/addNotifications.js";
+import { activeUser, authorisation } from "./components/authorisation.js";
 import { changeLocationGet, changeLocationGive } from "./components/changeLocationForm.js";
 import { closer } from "./components/closer.js";
-import { contentLoader } from "./components/contentLoader.js";
+import { changeData } from "./components/communicator.js";
+import { contentLoader, elements, forwarders } from "./components/contentLoader.js";
+import { formAutocomplete } from "./components/formAutocomplete.js";
 import { formSwitcher } from "./components/formSwitcher.js";
 import { opener } from "./components/opener.js";
 import { search } from "./components/search.js";
-import { allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputLocation, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, searchButton, searchInput } from "./utils/constants.js";
+import { allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputSN, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, reportButton, reportForm, reportFormInputText, reportFormInputTheme, reportFormSend, searchButton, searchInput } from "./utils/constants.js";
 
 export let activeTab;
 
@@ -105,6 +108,32 @@ authScreenForm.addEventListener('submit', (e) => {
 });
 
 
+/* report button */
+reportButton.addEventListener('click', () => {
+  reportForm.closest('.popup').classList.remove('popup_closed');
+  window.addEventListener('keyup', Closerlistener)
+  function Closerlistener(e) {
+    if (e.key === "Escape") {
+      reportForm.closest('.popup').classList.add('popup_closed');
+      window.removeEventListener('keyup', Closerlistener);
+    }
+  }
+})
+/* форма report */
+reportForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  reportFormSend.setAttribute('disabled', true);
+  reportFormSend.classList.add('form__send_disabled');
+  reportFormSend.querySelector('.form__preloader').classList.remove('form__preloader_disabled');
+  changeData({ table: 'reports', data: { user: activeUser.user, name: activeUser.name, theme: reportFormInputTheme.value, text: reportFormInputText.value } }).then((answer) => {
+    reportFormSend.removeAttribute('disabled');
+    reportFormSend.classList.remove('form__send_disabled');
+    reportFormSend.querySelector('.form__preloader').classList.add('form__preloader_disabled');
+    addNotifications('ok', `${answer.answerText}`);
+    reportForm.closest('.popup').classList.add('popup_closed');
+  });
+});
+
 /* Форма выдачи\принятия */
 changeLocationForm.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -114,6 +143,14 @@ changeLocationForm.addEventListener('submit', (e) => {
     changeLocationGet();
   }
 });
+
+formInputKKT.addEventListener('keyup', () => {
+  formAutocomplete('kkt', elements, formInputKKT, formInputSN)
+})
+formInputName.addEventListener('keyup', () => {
+  formAutocomplete('forwarders', forwarders, formInputName, formInputNumber)
+})
+// formAutocomplete(type, array, checkedInput, replaceableInput)
 
 /* Открыть при подключении */
 contentLoader('news', { table: 'news' });
