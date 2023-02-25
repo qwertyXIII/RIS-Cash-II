@@ -11,6 +11,7 @@
 @import url(../blocks/header/__role/header__role.css);
 @import url(../blocks/header/__exit-button/header__exit-button.css);
 @import url(../blocks/header/__exit-icon/header__exit-icon.css);
+@import url(../blocks/header/__admin-button/header__admin-button.css);
 @import url(../blocks/header/__settings-button/header__settings-button.css);
 @import url(../blocks/header/__settings-icon/header__settings-icon.css);
 @import url(../blocks/header/__tabs/header__tabs.css);
@@ -104,6 +105,9 @@
 @import url(../blocks/popup/_closed/popup_closed.css);
 /* bug-report */
 @import url(../blocks/bug-report/bug-report.css);
+/* admin-tools */
+@import url(../blocks/admin-tools/admin-tools.css);
+@import url(../blocks/admin-tools/__tabs/admin-tools__tabs.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

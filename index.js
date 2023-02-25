@@ -12,6 +12,18 @@ import { allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLoca
 
 export let activeTab;
 
+
+/* Форма входа */
+authScreenForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  authorisation(authScreenFormInput.value);
+  loadingScreen.classList.remove('loading-screen_disabled');
+});
+contentLoader('news', { table: 'news' });
+contentLoader('forwarders', { table: 'forwarders' });
+contentLoader('element', { table: 'base' });
+
+
 /* события формы */
 formInputLocation.addEventListener("change", () => {
   formSwitcher(formCheckboxSwitch, formInputLocation, formInputFrom);
@@ -100,13 +112,6 @@ changeLocationTab.addEventListener("click", (e) => {
   loadingScreen.classList.add('loading-screen_disabled');
 });
 
-/* Форма входа */
-authScreenForm.addEventListener('submit', (e) => {
-  e.preventDefault();
-  authorisation(authScreenFormInput.value);
-  loadingScreen.classList.remove('loading-screen_disabled');
-});
-
 
 /* report button */
 reportButton.addEventListener('click', () => {
@@ -150,9 +155,3 @@ formInputKKT.addEventListener('keyup', () => {
 formInputName.addEventListener('keyup', () => {
   formAutocomplete('forwarders', forwarders, formInputName, formInputNumber)
 })
-// formAutocomplete(type, array, checkedInput, replaceableInput)
-
-/* Открыть при подключении */
-contentLoader('news', { table: 'news' });
-contentLoader('forwarders', { table: 'forwarders' });
-contentLoader('element', { table: 'base' });

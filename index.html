@@ -18,6 +18,8 @@
         <p class="header__user-name">User Name Lastname</p>
         <p class="header__role">Role</p>
       </div>
+      <button class="header__admin-button"><ion-icon class="header__admin-icon"
+          name="build-outline"></ion-icon></button>
       <button class="header__settings-button"><ion-icon class="header__settings-icon"
           name="settings-outline"></ion-icon></button>
       <button class="header__exit-button">Выйти<ion-icon class="header__exit-icon"
@@ -138,7 +140,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.7.4 [BETA]</p>
+    <p class="footer__text">RIScash II v0.7.5 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
@@ -161,6 +163,17 @@
       <p class="form__subtext">Нажмите "ESC" для выхода</p>
     </form>
   </div>
+  
+  <div class="popup">
+    <div class="admin-tools">
+      <div class="admin-tools__tabs">
+        <h1 class="admin-tools__heading">Инструменты администратора </h1>
+        <button class="admin-tools__tab" id="userControl">Управление пользователями</button>
+        <button class="admin-tools__tab" id="userControl">Редактировать записи касс</button>
+      </div>
+      <div class="admin-tools__content"></div>
+    </div>
+  </div>
 <!--
   <div class="popup popup_closed">
     <form class="settings">
@@ -169,8 +182,6 @@
         <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-bug-theme" id="form-input-bug-theme" list="bug-theme">
         <label class="form__input-prompt" for="form-input-bug-theme">Тема:</label>
       </div>
-      <textarea class="form__input form__input-bug-textarea" cols="30" rows="10" placeholder="О чем вы хотите сообщить?"></textarea>
-      <button class="form__input form__send form__send-report">Отправить<div class="form__preloader form__preloader_disabled"></div></button>
       <p class="form__subtext">Нажмите "ESC" для выхода</p>
     </form>
   </div>
