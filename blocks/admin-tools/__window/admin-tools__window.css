@@ -1,0 +1,5 @@
+.admin-tools__window {
+  height: 100%;
+  width: 100%;
+  transition: 400ms;
+}

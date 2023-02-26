@@ -140,7 +140,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.7.5 [BETA]</p>
+    <p class="footer__text">RIScash II v0.7.7 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
@@ -164,14 +164,56 @@
     </form>
   </div>
   
-  <div class="popup">
+  <div class="popup popup_closed">
     <div class="admin-tools">
       <div class="admin-tools__tabs">
-        <h1 class="admin-tools__heading">Инструменты администратора </h1>
-        <button class="admin-tools__tab" id="userControl">Управление пользователями</button>
-        <button class="admin-tools__tab" id="userControl">Редактировать записи касс</button>
+        <h1 class="admin-tools__heading">Панель администратора</h1>
+        <button class="admin-tools__tab admin-tools__tab_active" id="userControl"><ion-icon class="admin-tools__tab-icon" name="people-outline"></ion-icon> Управление пользователями</button>
+        <button class="admin-tools__tab" id="createNews"><ion-icon class="admin-tools__tab-icon" name="newspaper-outline"></ion-icon> Создать новость</button>
+        <button class="admin-tools__tab" id="viewReports"><ion-icon class="admin-tools__tab-icon" name="bug-outline"></ion-icon> посмотреть репорты</button>
+        <button class="admin-tools__tab" id="refreshToken"><ion-icon class="admin-tools__tab-icon" name="key-outline"></ion-icon> Обновить токен</button>
+        <button class="admin-tools__tab admin-tools__tab-close">Закрыть</button>
       </div>
-      <div class="admin-tools__content"></div>
+      <div class="admin-tools__content">
+        <div class="admin-tools__windows">
+
+          <div class="admin-tools__window admin-tools__window-users">
+          </div>
+
+          <div class="admin-tools__window admin-tools__window-create-news admin-tools__window_closed">
+            <div class="form__input-container form__input-container_max-width">
+              <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-news-theme" id="form-input-news-theme">
+              <label class="form__input-prompt" for="form-input-news-theme">Заголовок</label>
+            </div>
+            <textarea class="form__input form__input-news-textarea" placeholder="О чем вы хотите сообщить?"></textarea>
+          </div>
+
+          <div class="admin-tools__window admin-tools__window-reports admin-tools__window_closed">
+          </div>
+
+          <div class="admin-tools__window admin-tools__window-refresh-token admin-tools__window_closed">
+            <h1 class="admin-tools__heading">Это экспериментальня функция!</h1>
+            <div class="form__input-container form__input-container_max-width">
+              <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-token" id="form-input-token">
+              <label class="form__input-prompt" for="form-input-token">Новый токен</label>
+            </div>
+          </div>
+
+          <div class="admin-tools__window admin-tools__window-no-rights admin-tools__window_closed">
+            <img src="./images/god.jpg" alt="Тут должна была быть картинка бога, но она куда-то делась..." class="admin-tools__window-img">
+            <p class="admin-tools__window-text">Вы добрались туда, куда не ступала нога обычного человка.</p>
+            <p class="admin-tools__window-text">К содалению, доступ к этому разделу есть только у разработчика и богов.</p>
+          </div>
+
+        </div>
+        <div class="admin-tools__panel">
+          <button class="admin-tools__button add-user"><ion-icon class="admin-tools__button-icon" name="person-add-outline"></ion-icon>Добавить нового пользователя</button>
+          <button class="admin-tools__button remove-user"><ion-icon class="admin-tools__button-icon" name="person-remove-outline"></ion-icon>Удалить пользователя</button>
+          <button class="admin-tools__button add-news admin-tools__button_closed"><ion-icon class="admin-tools__button-icon" name="add-circle-outline"></ion-icon>Создать</button>
+          <button class="admin-tools__button refresh-token admin-tools__button_closed"><ion-icon class="admin-tools__button-icon" name="refresh-circle-outline"></ion-icon>Обновить</button>
+          <div class="admin-tools__preloader form__preloader_disabled"></div>
+        </div>
+      </div>
     </div>
   </div>
 <!--
@@ -209,6 +251,14 @@
       <button class="form__input form__send">Войти</div></button>
     </form>
   </div>
+
+  <template id="element-template-user">
+    <div class="content user-element">
+      <p class="user-element__text user-element-user">146167</p>
+      <p class="user-element__text user-element-name">Вертинский Дмитрий Алексеевич</p>
+      <p class="user-element__text user-element-role">Разработчик</p>
+    </div>
+  </template>
 
   <template id="element-template-notification">
     <div class="content notification notification_closed">

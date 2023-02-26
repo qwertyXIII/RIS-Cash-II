@@ -1,0 +1,9 @@
+.admin-tools__tabs {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 0 10px 0 0;
+  justify-content: start;
+  background-color: #333;
+  border-radius: 10px;
+}

@@ -76,3 +76,29 @@ export const reportFormSend = document.querySelector('.form__send-report');
 /* Поиск */
 export const searchInput = document.querySelector('.header__search-input');
 export const searchButton = document.querySelector('.header__search-button');
+/* админ-панель */
+export const adminPanel = document.querySelector('.admin-tools');
+/* кнопка вызова админ-панели */
+export const adminPanelOpenButton = document.querySelector('.header__admin-button');
+/* вкладки админ-панели */
+export const allAdminTabs = document.querySelectorAll('.admin-tools__tab');
+export const userControlTab = document.querySelector('#userControl');
+export const createNewsTab = document.querySelector('#createNews');
+export const viewReportsTab = document.querySelector('#viewReports');
+export const refreshTokenTab = document.querySelector('#refreshToken');
+/* окна админ-панели */
+export const allAdminWindows = document.querySelectorAll('.admin-tools__window');
+export const userControlWindow = document.querySelector('.admin-tools__window-users');
+export const createNewsWindow = document.querySelector('.admin-tools__window-create-news');
+export const viewReportsWindow = document.querySelector('.admin-tools__window-reports');
+export const refreshTokenWindow = document.querySelector('.admin-tools__window-refresh-token');
+export const noRightsWindow = document.querySelector('.admin-tools__window-no-rights');
+/* кнопки админ-панели */
+export const allAdminButtons = document.querySelectorAll('.admin-tools__button');
+export const addUserButton = document.querySelector('.add-user');
+export const removeUserButton = document.querySelector('.remove-user');
+export const addNewsButton = document.querySelector('.add-news');
+export const refreshTokenButton = document.querySelector('.refresh-token');
+export const adminPanelCloseButton = document.querySelector('.admin-tools__tab-close');
+/* прелоадер админ-панели */
+export const adminPanelPreloader = document.querySelector('.admin-tools__preloader');

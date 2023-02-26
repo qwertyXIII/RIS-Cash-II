@@ -1,0 +1,24 @@
+.admin-tools__tab {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  text-align: start;
+  padding: 5px;
+  color: cornsilk;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 200ms;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  user-select: none;
+}
+.admin-tools__tab:last-child {
+  margin: auto 0 0 0;
+}
+.admin-tools__tab:hover {
+  background-color: #444;
+}
+.admin-tools__tab_active {
+  background-color: #555;
+}

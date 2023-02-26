@@ -1,0 +1,6 @@
+.form__input-container_max-width {
+  width: 100%;
+}
+.form__input-container_max-width .form__input {
+  width: calc(100% - 20px);
+}

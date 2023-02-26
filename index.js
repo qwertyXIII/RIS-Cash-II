@@ -1,14 +1,14 @@
 import { addNotifications } from "./components/addNotifications.js";
 import { activeUser, authorisation } from "./components/authorisation.js";
 import { changeLocationGet, changeLocationGive } from "./components/changeLocationForm.js";
-import { closer } from "./components/closer.js";
+import { adminPanelCloser, closer } from "./components/closer.js";
 import { changeData } from "./components/communicator.js";
 import { contentLoader, elements, forwarders } from "./components/contentLoader.js";
 import { formAutocomplete } from "./components/formAutocomplete.js";
 import { formSwitcher } from "./components/formSwitcher.js";
 import { opener } from "./components/opener.js";
 import { search } from "./components/search.js";
-import { allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputSN, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, reportButton, reportForm, reportFormInputText, reportFormInputTheme, reportFormSend, searchButton, searchInput } from "./utils/constants.js";
+import { addNewsButton, addUserButton, adminPanel, adminPanelCloseButton, adminPanelOpenButton, adminPanelPreloader, allAdminButtons, allAdminTabs, allAdminWindows, allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, createNewsTab, createNewsWindow, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputSN, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, refreshTokenButton, refreshTokenTab, refreshTokenWindow, removeUserButton, reportButton, reportForm, reportFormInputText, reportFormInputTheme, reportFormSend, searchButton, searchInput, userControlTab, userControlWindow, viewReportsTab, viewReportsWindow } from "./utils/constants.js";
 
 export let activeTab;
 
@@ -151,7 +151,43 @@ changeLocationForm.addEventListener('submit', (e) => {
 
 formInputKKT.addEventListener('keyup', () => {
   formAutocomplete('kkt', elements, formInputKKT, formInputSN)
-})
+});
 formInputName.addEventListener('keyup', () => {
   formAutocomplete('forwarders', forwarders, formInputName, formInputNumber)
-})
+});
+
+/* вкладки админ-папнели */
+userControlTab.addEventListener('click', () => {
+  adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  userControlTab.classList.add('admin-tools__tab_active');
+  userControlWindow.classList.remove('admin-tools__window_closed');
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+  addUserButton.classList.remove('admin-tools__button_closed');
+  removeUserButton.classList.remove('admin-tools__button_closed');
+});
+createNewsTab.addEventListener('click', () => {
+  adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  createNewsTab.classList.add('admin-tools__tab_active');
+  createNewsWindow.classList.remove('admin-tools__window_closed');
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+  addNewsButton.classList.remove('admin-tools__button_closed');
+});
+viewReportsTab.addEventListener('click', () => {
+  adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  viewReportsTab.classList.add('admin-tools__tab_active');
+  viewReportsWindow.classList.remove('admin-tools__window_closed');
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+});
+refreshTokenTab.addEventListener('click', () => {
+  adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  refreshTokenTab.classList.add('admin-tools__tab_active');
+  refreshTokenWindow.classList.remove('admin-tools__window_closed');
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+  refreshTokenButton.classList.remove('admin-tools__button_closed');
+});
+adminPanelOpenButton.addEventListener('click', () => {
+  adminPanel.closest('.popup').classList.remove('popup_closed')
+});
+adminPanelCloseButton.addEventListener('click', () => {
+  adminPanel.closest('.popup').classList.add('popup_closed')
+});

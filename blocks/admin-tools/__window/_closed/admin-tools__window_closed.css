@@ -1,0 +1,5 @@
+.admin-tools__window_closed {
+  visibility: hidden;
+  scale: 0;
+  height: 0;
+}
