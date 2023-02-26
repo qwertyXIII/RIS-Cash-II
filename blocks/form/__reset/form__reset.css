@@ -5,4 +5,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
+    transition: 500ms;
+}
+
+.form__reset:hover .form__reset-icon {
+    transition: 600ms;
+    transform: rotate(360deg);
 }

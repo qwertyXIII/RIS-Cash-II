@@ -125,7 +125,7 @@ export function printReceiptRepair(obj, user) {
           </div>
           
           <div style="margin: auto 0 0 0;display: flex;flex-wrap: wrap;align-items: end;">
-             <p class="text1">Бланк заполнен верно, оборудование переданно ${new Date().toLocaleDateString()}</p>
+             <p class="text1">Бланк заполнен верно, оборудование переданно ${obj.issued}</p>
              <p class="text2 podpis" style="position: relative;">____________________</p>
              <p class="text1">Оборудование передал специалист сервисной зоны ${user}:</p>
              <p class="text2">____________________</p>
@@ -151,7 +151,7 @@ export function printReceiptRepair(obj, user) {
           </div>
           
           <div style="margin: auto 0 0 0;display: flex;flex-wrap: wrap;align-items: end;">
-             <p class="text1">Бланк заполнен верно, оборудование переданно ${new Date().toLocaleDateString()}</p>
+             <p class="text1">Бланк заполнен верно, оборудование переданно ${obj.issued}</p>
              <p class="text2 podpis" style="position: relative;">____________________</p>
              <p class="text1">Оборудование передал специалист сервисной зоны ${user}:</p>
              <p class="text2">____________________</p>
