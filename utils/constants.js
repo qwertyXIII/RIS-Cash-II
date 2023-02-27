@@ -105,3 +105,11 @@ export const refreshTokenButton = document.querySelector('.refresh-token');
 export const adminPanelCloseButton = document.querySelector('.admin-tools__tab-close');
 /* прелоадер админ-панели */
 export const adminPanelPreloader = document.querySelector('.admin-tools__preloader');
+/* формы админ-панели */
+export const adminPanelAddUserForm = document.querySelector('.admin-tools__add-user-form');
+/* Инпуты админ-панели */
+export const adminPanelUserTabelInput = document.querySelector('.form__input-user-tabel');
+export const adminPanelUserNameInput = document.querySelector('.form__input-user-name');
+export const adminPanelUserRoleInput = document.querySelector('.form__input-user-role');
+export const adminPanelNewsThemeInput = document.querySelector('.form__input-news-theme');
+export const adminPanelNewsTextInput = document.querySelector('.form__input-news-textarea');

@@ -1,8 +1,11 @@
+import { start } from "../index.js";
 import { adminPanelOpenButton, authScreen, loadingScreen, loadingScreenText, user, userRole } from "../utils/constants.js"
 import { addNotifications } from "./addNotifications.js";
 import { getData } from "./communicator.js"
 
 export let activeUser;
+
+let started = false;
 
 export function authorisation(parameter) {
   loadingScreenText.textContent = `Загрузка...`;
@@ -28,11 +31,16 @@ export function authorisation(parameter) {
       }
       authScreen.classList.add('authorisation_closed');
       addNotifications('ok', `${answer.answerText} ${answer.answer[0].name}.`)
-        loadingScreen.classList.add('loading-screen_disabled');
+      loadingScreen.classList.add('loading-screen_disabled');
     } else {
       addNotifications('error', `${answer.answerText}`)
       loadingScreenText.textContent = answer.answerText
       loadingScreen.classList.add('loading-screen_disabled');
+      return;
+    }
+    if (!started) {
+      start();
+      started = true;
     }
   });
 }

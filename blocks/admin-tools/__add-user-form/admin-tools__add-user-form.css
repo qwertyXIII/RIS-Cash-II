@@ -1,0 +1,4 @@
+.admin-tools__add-user-form {
+  display: flex;
+  flex-direction: column;
+}

@@ -140,12 +140,12 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.7.8 [BETA]</p>
+    <p class="footer__text">RIScash II v0.8.1 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
   <div class="popup popup_closed">
-    <form class="bug-report">
+    <form class="popup__content bug-report">
       <h1 class="form__heading">Сообщить об ошибке</h1>
       <div class="form__input-container">
         <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-bug-theme" id="form-input-bug-theme" list="bug-theme">
@@ -165,7 +165,7 @@
   </div>
   
   <div class="popup popup_closed">
-    <div class="admin-tools">
+    <div class="popup__content admin-tools">
       <div class="admin-tools__tabs">
         <h1 class="admin-tools__heading">Панель администратора</h1>
         <button class="admin-tools__tab admin-tools__tab_active" id="userControl"><ion-icon class="admin-tools__tab-icon" name="people-outline"></ion-icon> Управление пользователями</button>
@@ -181,6 +181,25 @@
           </div>
 
           <div class="admin-tools__window admin-tools__window-add-user admin-tools__window_closed">
+            <h1 class="admin-tools__heading">Добавление нового пользователя</h1>
+            <form class="form admin-tools__add-user-form">
+              <div class="form__input-container form__input-container_max-width">
+                <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-user-tabel" id="add-user-tabel">
+                <label class="form__input-prompt" for="add-user-tabel">Табельный номер</label>
+              </div>
+              <div class="form__input-container form__input-container_max-width">
+                <input type="text" placeholder=" " autocomplete="off" class="form__input form__input-user-name" id="add-user-name">
+                <label class="form__input-prompt" for="add-user-name">ФИО</label>
+              </div>
+              <div class="form__input-container_row">
+                <select class="form__input form__input-user-role">
+                  <option value="user" class="form__option">Пользователь</option>
+                  <option value="admin" class="form__option">Администратор</option>
+                  <option value="developer" class="form__option">Разработчик</option>
+                </select>
+                <button class="form__input form__send form__send-accept">Добавить</button>
+              </div>
+            </form>
           </div>
 
           <div class="admin-tools__window admin-tools__window-create-news admin-tools__window_closed">

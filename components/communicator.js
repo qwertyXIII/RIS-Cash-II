@@ -1,3 +1,5 @@
+import { activeUser } from "./authorisation.js";
+
 // Функция отправки запроса данных с сервера
 const token = 'AKfycbx4T3ZewDPB7IaYTvlz4EYsWlDMGBw_cP0r4dBVsl5HzGEj0bt-saiMbNTXYS27a0rA';
 
@@ -39,6 +41,7 @@ export let changeData = function (parameters) {
   url.searchParams.append('table', parameters.table);
   url.searchParams.append('action', parameters.action);
   url.searchParams.append('data', JSON.stringify(parameters.data));
+  url.searchParams.append('activeUser', JSON.stringify(activeUser));
 
   return new Promise(function (resolve, reject) {
     let xhttp = new XMLHttpRequest();
