@@ -1,4 +1,4 @@
-import { authScreen, loadingScreen, loadingScreenText, user, userRole } from "../utils/constants.js"
+import { adminPanelOpenButton, authScreen, loadingScreen, loadingScreenText, user, userRole } from "../utils/constants.js"
 import { addNotifications } from "./addNotifications.js";
 import { getData } from "./communicator.js"
 
@@ -14,12 +14,15 @@ export function authorisation(parameter) {
       userRole.textContent = answer.answer[0].role;
       switch (answer.answer[0].role) {
         case 'developer':
+          adminPanelOpenButton.classList.remove('admin-tools__button_closed');
           userRole.textContent = 'Разработчик'
           break;
         case 'admin':
+          adminPanelOpenButton.classList.remove('admin-tools__button_closed');
           userRole.textContent = 'Администратор'
           break;
         case 'user':
+          adminPanelOpenButton.classList.add('admin-tools__button_closed');
           userRole.textContent = 'Пользователь'
           break;
       }

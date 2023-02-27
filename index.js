@@ -3,12 +3,12 @@ import { activeUser, authorisation } from "./components/authorisation.js";
 import { changeLocationGet, changeLocationGive } from "./components/changeLocationForm.js";
 import { adminPanelCloser, closer } from "./components/closer.js";
 import { changeData } from "./components/communicator.js";
-import { contentLoader, elements, forwarders } from "./components/contentLoader.js";
+import { contentLoader, elements, forwarders, selectedUser } from "./components/contentLoader.js";
 import { formAutocomplete } from "./components/formAutocomplete.js";
 import { formSwitcher } from "./components/formSwitcher.js";
 import { opener } from "./components/opener.js";
 import { search } from "./components/search.js";
-import { addNewsButton, addUserButton, adminPanel, adminPanelCloseButton, adminPanelOpenButton, adminPanelPreloader, allAdminButtons, allAdminTabs, allAdminWindows, allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, createNewsTab, createNewsWindow, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputSN, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, refreshTokenButton, refreshTokenTab, refreshTokenWindow, removeUserButton, reportButton, reportForm, reportFormInputText, reportFormInputTheme, reportFormSend, searchButton, searchInput, userControlTab, userControlWindow, viewReportsTab, viewReportsWindow } from "./utils/constants.js";
+import { addNewsButton, addUserButton, adminPanel, adminPanelCloseButton, adminPanelOpenButton, adminPanelPreloader, allAdminButtons, allAdminTabs, allAdminWindows, allCashTab, authScreen, authScreenForm, authScreenFormInput, changeLocationForm, changeLocationTab, createNewsTab, createNewsWindow, endsFNTab, exitButton, formCheckboxSwitch, formInputFrom, formInputKKT, formInputLocation, formInputName, formInputNumber, formInputSN, forwardersTab, historyTab, inForwarderTab, inRepairTab, inShopTab, loadingScreen, loadingScreenText, mainTab, noRightsWindow, refreshTokenButton, refreshTokenTab, refreshTokenWindow, removeUserButton, reportButton, reportForm, reportFormInputText, reportFormInputTheme, reportFormSend, searchButton, searchInput, userControlTab, userControlWindow, viewReportsTab, viewReportsWindow } from "./utils/constants.js";
 
 export let activeTab;
 
@@ -22,6 +22,7 @@ authScreenForm.addEventListener('submit', (e) => {
 contentLoader('news', { table: 'news' });
 contentLoader('forwarders', { table: 'forwarders' });
 contentLoader('element', { table: 'base' });
+contentLoader('user', { table: 'users' });
 
 
 /* события формы */
@@ -158,6 +159,7 @@ formInputName.addEventListener('keyup', () => {
 
 /* вкладки админ-папнели */
 userControlTab.addEventListener('click', () => {
+  contentLoader('user', { table: 'users' });
   adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
   userControlTab.classList.add('admin-tools__tab_active');
   userControlWindow.classList.remove('admin-tools__window_closed');
@@ -167,27 +169,56 @@ userControlTab.addEventListener('click', () => {
 });
 createNewsTab.addEventListener('click', () => {
   adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  if (activeUser.role != 'developer') {
+    noRightsWindow.classList.remove('admin-tools__window_closed');
+    return;
+  }
   createNewsTab.classList.add('admin-tools__tab_active');
   createNewsWindow.classList.remove('admin-tools__window_closed');
-  adminPanelPreloader.classList.remove('form__preloader_disabled');
   addNewsButton.classList.remove('admin-tools__button_closed');
 });
 viewReportsTab.addEventListener('click', () => {
   adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  if (activeUser.role != 'developer') {
+    noRightsWindow.classList.remove('admin-tools__window_closed');
+    return;
+  }
+  contentLoader('reports', { table: 'reports' });
   viewReportsTab.classList.add('admin-tools__tab_active');
   viewReportsWindow.classList.remove('admin-tools__window_closed');
   adminPanelPreloader.classList.remove('form__preloader_disabled');
 });
 refreshTokenTab.addEventListener('click', () => {
   adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  if (activeUser.role != 'developer') {
+    noRightsWindow.classList.remove('admin-tools__window_closed');
+    return;
+  }
   refreshTokenTab.classList.add('admin-tools__tab_active');
   refreshTokenWindow.classList.remove('admin-tools__window_closed');
-  adminPanelPreloader.classList.remove('form__preloader_disabled');
   refreshTokenButton.classList.remove('admin-tools__button_closed');
 });
 adminPanelOpenButton.addEventListener('click', () => {
-  adminPanel.closest('.popup').classList.remove('popup_closed')
+  adminPanel.closest('.popup').classList.remove('popup_closed');
+  contentLoader('user', { table: 'users' });
+  adminPanelCloser(allAdminTabs, allAdminWindows, allAdminButtons);
+  userControlTab.classList.add('admin-tools__tab_active');
+  userControlWindow.classList.remove('admin-tools__window_closed');
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+  addUserButton.classList.remove('admin-tools__button_closed');
+  removeUserButton.classList.remove('admin-tools__button_closed');
 });
 adminPanelCloseButton.addEventListener('click', () => {
   adminPanel.closest('.popup').classList.add('popup_closed')
+});
+
+/* Кнопки админ-панели */
+removeUserButton.addEventListener('click', () => {
+  adminPanelPreloader.classList.remove('form__preloader_disabled');
+  changeData({ table: 'users', action: 'remove', data: {user: selectedUser.user} }).then((answer => {
+    for (let e of answer.answerText) {
+      addNotifications(answer.answer, e)
+    }
+    contentLoader('user', { table: 'users' });
+  }))
 });

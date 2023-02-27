@@ -1,0 +1,21 @@
+.report-element {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 20px;
+  user-select: none;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.report-element:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.report-element:last-child {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.report-element:hover {
+  background-color: #444;
+}

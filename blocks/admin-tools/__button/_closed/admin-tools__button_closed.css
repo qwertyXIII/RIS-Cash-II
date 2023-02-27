@@ -1,8 +1,9 @@
 .admin-tools__button_closed {
   visibility: hidden;
   opacity: 0;
-  width: 0;
+  height: 0;
   margin: 0;
   padding: 0;
+  width: 0;
   font-size: 0;
 }

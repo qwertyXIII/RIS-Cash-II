@@ -1,10 +1,12 @@
-import { elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateNews, elementTemplateRepair, elementTemplateShop, formForwardersDataList, formKktDataList, loadingScreen, newsContainer } from "../utils/constants.js";
+import { adminPanelPreloader, elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateNews, elementTemplateRepair, elementTemplateReport, elementTemplateShop, elementTemplateUser, formForwardersDataList, formKktDataList, loadingScreen, newsContainer, userControlWindow, viewReportsWindow } from "../utils/constants.js";
 import { activeUser } from "./authorisation.js";
 import { getData } from "./communicator.js";
 import { printReceiptForwarder, printReceiptRepair } from "./printRceipt.js";
 
 export let elements;
 export let forwarders;
+
+export let selectedUser;
 
 export function contentLoader(type, parameters) {
   let timeOut = 1
@@ -55,6 +57,24 @@ export function contentLoader(type, parameters) {
         });
         loadingScreen.classList.add('loading-screen_disabled');
       });
+      break;
+    case 'user':
+      getData(parameters).then((answer) => {
+        userControlWindow.innerHTML = '';
+        answer.answer.forEach(data => {
+          userControlWindow.append(createElementTypeUser(data));
+        })
+        adminPanelPreloader.classList.add('form__preloader_disabled');
+      })
+      break;
+    case 'reports':
+      getData(parameters).then((answer) => {
+        viewReportsWindow.innerHTML = '';
+        answer.answer.forEach(data => {
+          viewReportsWindow.append(createElementTypeReport(data));
+        })
+        adminPanelPreloader.classList.add('form__preloader_disabled');
+      })
       break;
   }
 }
@@ -167,6 +187,47 @@ export function createElementTypeForwarder(data) {
   setTimeout(() => {
     element.classList.remove('element_closed');
   }, 100);
+  return element;
+}
+
+export function createElementTypeReport(data) {
+  let element = elementTemplateReport.content.querySelector('.content').cloneNode(true);
+  element.classList.remove('content');
+  element.querySelector('.report-user').textContent = data.user
+  element.querySelector('.report-name').textContent = data.name
+  element.querySelector('.report-date').textContent = data.date
+  element.querySelector('.report-theme').textContent = data.theme
+  element.querySelector('.report-text').textContent = data.text
+  return element;
+}
+
+export function createElementTypeUser(data) {
+  let element = elementTemplateUser.content.querySelector('.content').cloneNode(true);
+  element.classList.remove('content');
+  element.querySelector('.user-element-user').textContent = data.user;
+  element.querySelector('.user-element-name').textContent = data.name;
+
+  switch (data.role) {
+    case 'developer':
+      element.querySelector('.user-element-role').textContent = 'Разработчик'
+      break;
+    case 'admin':
+      element.querySelector('.user-element-role').textContent = 'Администратор'
+      break;
+    case 'user':
+      element.querySelector('.user-element-role').textContent = 'Пользователь'
+      break;
+    default:
+      element.querySelector('.user-element-role').textContent = 'Не определенно!'
+      break;
+  }
+  element.addEventListener('click', () => {
+    for (let e of document.querySelectorAll('.user-element')) {
+      e.classList.remove('user-element_selected')
+    }
+    selectedUser = data;
+    element.classList.add('user-element_selected')
+  })
   return element;
 }
 

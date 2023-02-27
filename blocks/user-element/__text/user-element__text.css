@@ -2,3 +2,10 @@
   color: cornsilk;
   margin: 0;
 }
+.user-element__text:nth-child(1) {
+  width: 60px;
+}
+.user-element__text:nth-child(3) {
+  width: 120px;
+  text-align: end;
+}

@@ -43,6 +43,7 @@
 @import url(../blocks/element/__text/_data/element__text_data.css);
 @import url(../blocks/element/__button-box/element__button-box.css);
 @import url(../blocks/element/__button/element__button.css);
+@import url(../blocks/element/__button-icon/element__button-icon.css);
 @import url(../blocks/element/__button-open-icon/element__button-open-icon.css);
 @import url(../blocks/element/__button-open-icon/_active/element__button-open-icon_active.css);
 @import url(../blocks/element/__button-edit-icon/element__button-edit-icon.css);
@@ -127,7 +128,13 @@
 @import url(../blocks/admin-tools/__preloader/admin-tools__preloader.css);
 /* user-element */
 @import url(../blocks/user-element/user-element.css);
+@import url(../blocks/user-element/_selected/user-element_selected.css);
 @import url(../blocks/user-element/__text/user-element__text.css);
+@import url(../blocks/user-element/__text/user-element__text.css);
+/* report-element */
+@import url(../blocks/report-element/report-element.css);
+@import url(../blocks/report-element/__text/report-element__text.css);
+@import url(../blocks/report-element/__text-value/report-element__text-value.css);
 /* footer */
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__text/footer__text.css);

@@ -10,4 +10,5 @@
     margin: 5px 10px 5px 0;
     box-sizing: border-box;
     transition: 400ms;
+    max-width: 70vw;
 }

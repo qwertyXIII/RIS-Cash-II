@@ -57,6 +57,8 @@ export const elementTemplateForwarder = document.querySelector('#element-templat
 export const elementTemplateRepair = document.querySelector('#element-template-repair');
 export const elementTemplateShop = document.querySelector('#element-template-shop');
 export const elementTemplateForwarderName = document.querySelector('#element-template-forwarder-name');
+export const elementTemplateUser = document.querySelector('#element-template-user');
+export const elementTemplateReport = document.querySelector('#element-template-report');
 /* Контейнер уведомлений */
 export const notificationContainer = document.querySelector('.notifications');
 /* Загрузочный экран */
@@ -93,6 +95,7 @@ export const createNewsWindow = document.querySelector('.admin-tools__window-cre
 export const viewReportsWindow = document.querySelector('.admin-tools__window-reports');
 export const refreshTokenWindow = document.querySelector('.admin-tools__window-refresh-token');
 export const noRightsWindow = document.querySelector('.admin-tools__window-no-rights');
+export const addUserWindow = document.querySelector('.admin-tools__window-add-user');
 /* кнопки админ-панели */
 export const allAdminButtons = document.querySelectorAll('.admin-tools__button');
 export const addUserButton = document.querySelector('.add-user');
