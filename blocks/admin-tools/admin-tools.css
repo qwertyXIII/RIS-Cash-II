@@ -3,6 +3,5 @@
   padding: 20px;
   border-radius: 20px;
   display: flex;
-  max-height: 60vh;
   transition: 600ms;
 }

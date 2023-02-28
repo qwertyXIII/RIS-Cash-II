@@ -59,6 +59,7 @@ export const elementTemplateShop = document.querySelector('#element-template-sho
 export const elementTemplateForwarderName = document.querySelector('#element-template-forwarder-name');
 export const elementTemplateUser = document.querySelector('#element-template-user');
 export const elementTemplateReport = document.querySelector('#element-template-report');
+export const elementTemplateHistory = document.querySelector('#element-template-history');
 /* Контейнер уведомлений */
 export const notificationContainer = document.querySelector('.notifications');
 /* Загрузочный экран */

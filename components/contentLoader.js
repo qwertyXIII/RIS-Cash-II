@@ -1,4 +1,4 @@
-import { adminPanelPreloader, elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateNews, elementTemplateRepair, elementTemplateReport, elementTemplateShop, elementTemplateUser, formForwardersDataList, formKktDataList, loadingScreen, newsContainer, userControlWindow, viewReportsWindow } from "../utils/constants.js";
+import { adminPanelPreloader, elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateHistory, elementTemplateNews, elementTemplateRepair, elementTemplateReport, elementTemplateShop, elementTemplateUser, formForwardersDataList, formKktDataList, loadingScreen, newsContainer, userControlWindow, viewReportsWindow } from "../utils/constants.js";
 import { activeUser } from "./authorisation.js";
 import { getData } from "./communicator.js";
 import { printReceiptForwarder, printReceiptRepair } from "./printRceipt.js";
@@ -76,7 +76,62 @@ export function contentLoader(type, parameters) {
         adminPanelPreloader.classList.add('form__preloader_disabled');
       })
       break;
+    case 'history':
+      getData(parameters).then((answer) => {
+        contentRemover(elementsContainer, 'element');
+        answer.answer.forEach(data => {
+          formForwardersDataList.prepend(new Option(data.name));
+          setTimeout(() => {
+            elementsContainer.append(createElementTypeHistory(data));
+          }, timeOut);
+          timeOut += 60;
+        });
+        loadingScreen.classList.add('loading-screen_disabled');
+      })
+      break;
   }
+}
+
+export function createElementTypeHistory(data) {
+  console.log(data);
+  let element = elementTemplateHistory.content.querySelector('.content').cloneNode(true);
+  element.classList.remove('content');
+  element.querySelector('.kkt-number').textContent = data.kkt;
+  element.querySelector('.kkt-SN').textContent = data.sn;
+  if (data.issued == '') {
+    element.querySelector('.kkt-type').textContent = 'Принята: ';
+    element.querySelector('.kkt-date').textContent = data.accepted;
+  } else {
+    element.querySelector('.kkt-type').textContent = 'Выдана: ';
+    element.querySelector('.kkt-date').textContent = data.issued;
+  }
+  if (data.location == 'shop') {
+    element.querySelector('.kkt-location').textContent = 'В магазин.';
+  } else if (data.location == 'forwarder') {
+    element.querySelector('.kkt-location').textContent = 'Экспедитору: ';
+    element.querySelector('.kkt-from').textContent = data.forwarder;
+  } else if (data.location == 'repair') {
+    element.querySelector('.kkt-location').textContent = 'в ремонт по заявке: ';
+    element.querySelector('.kkt-from').textContent = data.number;
+  }
+  /* invisible-part */
+  element.querySelector('.kkt-reader').textContent = data.reader;
+  element.querySelector('.kkt-equipment').textContent = data.equipment;
+  /* EventListeners */
+  element.querySelector('.element__button-open').addEventListener('click', () => {
+    element.querySelector('.element__invisible').classList.toggle('element__invisible_close');
+    element.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
+  })
+  element.querySelector('.element__button-open').addEventListener('dblclick', () => {
+    for (let e of elementsContainer.querySelectorAll('.element')) {
+      e.querySelector('.element__invisible').classList.toggle('element__invisible_close');
+      e.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
+    }
+  })
+  setTimeout(() => {
+    element.classList.remove('element_closed');
+  }, 100);
+  return element;
 }
 
 function createElementTypeNews(data) {
@@ -233,9 +288,6 @@ export function createElementTypeUser(data) {
 
 export function contentRemover(container, selector) {
   for (let e of container.querySelectorAll(`.${selector}`)) {
-    e.classList.add('element_closed');
-    setTimeout(() => {
-      e.remove()
-    }, 100)
+    e.remove();
   }
 }

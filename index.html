@@ -13,7 +13,7 @@
 
   <header class="header">
     <div class="header__top-container">
-      <img class="header__logo" src="./images/Logo-big.png" alt="RIS | Cash">
+      <img class="header__logo" src="./images/Logo-big.png" alt="RIS-Cash II">
       <div class="header__user">
         <p class="header__user-name">User Name Lastname</p>
         <p class="header__role">Role</p>
@@ -140,7 +140,7 @@
   </main>
 
   <footer class="footer">
-    <p class="footer__text">RIScash II v0.8.1 [BETA]</p>
+    <p class="footer__text">RIScash II v0.9.0 [BETA]</p>
     <button class="footer__report-button">Сообщить об ошибке<ion-icon class="footer__report-icon" name="bug-outline"></ion-icon></button>
   </footer>
 
@@ -318,6 +318,25 @@
           <p class="element__text">ФИО: <span class="element__text element__text_data forwarder-name">test</span></p>
           <p class="element__text">Номер: <span class="element__text element__text_data forwarder-number">ФИО экспедитора</span></p>
         </div>
+      </div>
+    </div>
+  </template>
+
+  <template id="element-template-history">
+    <div class="content element element_closed">
+      <div class="element__visible">
+        <div class="element__visible-info">
+          <p class="element__text">ККТ: <span class="element__text element__text_data kkt-number">test</span>, S/N: <span class="element__text element__text_data kkt-SN">test</span></p>
+          <p class="element__text"><span class="element__text element__text_data kkt-type">Выдана</span> <span class="element__text element__text_data kkt-date">ФИО экспедитора</span></p>
+          <p class="element__text"><span class="element__text element__text_data kkt-location"></span> <span class="element__text element__text_data kkt-from"></span></p>
+        </div>
+        <div class="element__button-box">
+          <button class="element__button element__button-open"><ion-icon class="element__button-icon element__button-open-icon" name="chevron-down-outline"></ion-icon></button>
+        </div>
+      </div>
+      <div class="element__invisible element__invisible_close">
+        <p class="element__text">Ридер с кассой №: <span class="element__text element__text_data kkt-reader">Test READER</span></p>
+        <p class="element__text">Дополнительное оборудование: <span class="element__text element__text_data kkt-equipment">СЗУ, АЗУ</span></p>
       </div>
     </div>
   </template>

@@ -92,12 +92,9 @@ export function start() {
   });
   historyTab.addEventListener("click", (e) => {
     closer(); opener(e, "elements"); activeTab = 'history';
-
+    contentLoader('history', { table: 'history'});
     loadingScreen.classList.remove('loading-screen_disabled');
-    loadingScreenText.textContent = 'Пока-что эта функция недоступна.';
-    setTimeout(() => {
-      loadingScreen.classList.add('loading-screen_disabled');
-    }, 1000);
+    loadingScreenText.textContent = 'Загрузка истории...'
   });
   forwardersTab.addEventListener("click", (e) => {
     closer(); opener(e, "elements"); activeTab = 'forwarders';
