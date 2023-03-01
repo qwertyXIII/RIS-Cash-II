@@ -1,7 +1,7 @@
 import { adminPanelPreloader, elementsContainer, elementTemplateForwarder, elementTemplateForwarderName, elementTemplateHistory, elementTemplateNews, elementTemplateRepair, elementTemplateReport, elementTemplateShop, elementTemplateUser, formForwardersDataList, formKktDataList, loadingScreen, newsContainer, userControlWindow, viewReportsWindow } from "../utils/constants.js";
 import { activeUser } from "./authorisation.js";
 import { getData } from "./communicator.js";
-import { printReceiptForwarder, printReceiptRepair } from "./printRceipt.js";
+import { printBarCode, printReceiptForwarder, printReceiptRepair } from "./printRceipt.js";
 
 export let elements;
 export let forwarders;
@@ -154,6 +154,9 @@ export function createElementTypeInForwarder(data) {
   element.querySelector('.kkt-FN-validity-period').textContent = data.FNValidityPeriod;
   element.querySelector('.kkt-issued').textContent = data.issued;
   /* EventListeners */
+  element.querySelector('.element__button-barcode').addEventListener('click', () => {
+    printBarCode(data.kkt);
+  })
   element.querySelector('.element__button-open').addEventListener('click', () => {
     element.querySelector('.element__invisible').classList.toggle('element__invisible_close');
     element.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
@@ -186,6 +189,9 @@ export function createElementTypeInShop(data) {
   /* invisible-part */
   element.querySelector('.kkt-FN-validity-period').textContent = data.FNValidityPeriod;
   /* EventListeners */
+  element.querySelector('.element__button-barcode').addEventListener('click', () => {
+    printBarCode(data.kkt);
+  })
   element.querySelector('.element__button-open').addEventListener('click', () => {
     element.querySelector('.element__invisible').classList.toggle('element__invisible_close');
     element.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');
@@ -210,6 +216,9 @@ export function createElementTypeInRepair(data) {
   element.querySelector('.kkt-FN-validity-period').textContent = data.FNValidityPeriod;
   element.querySelector('.kkt-issued').textContent = data.issued;
   /* EventListeners */
+  element.querySelector('.element__button-barcode').addEventListener('click', () => {
+    printBarCode(data.kkt);
+  })
   element.querySelector('.element__button-open').addEventListener('click', () => {
     element.querySelector('.element__invisible').classList.toggle('element__invisible_close');
     element.querySelector('.element__button-open-icon').classList.toggle('element__button-open-icon_active');

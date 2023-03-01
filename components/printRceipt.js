@@ -194,3 +194,54 @@ export function printReceiptRepair(obj, user) {
     printWindow2.print();
   }, 500);
 }
+
+//////////////////////////////////////////////////////////////////////////////////
+
+export function printBarCode(number) {
+  let printWindow = window.open('', '', 'width=891px,height=630px,resizable=no,menubar=no,toolbar=no,location=no,status=no,scrollbars=no')
+  printWindow.document.write(`
+  <body class="body">
+    
+      <svg class="barcode" id="barcode"></svg>
+  
+    <style>
+      html {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 5vh;
+        align-items: center;
+        justify-self: center;
+        grid-gap: 2.4vw;
+        box-sizing: border-box;
+      }
+      .barcode {margin: 1%;width: 20vw;height: 5vh; outline: 1px black solid;}
+            @media print {
+              @page { margin: 10px; }
+              body { margin: 0.5cm; }
+            }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/barcodes/JsBarcode.code128.min.js"></script>
+    <script>
+      JsBarcode('#barcode', '${number}', {
+        width: 4,
+        height: 40,
+        displayValue: true
+      });
+    </script>
+  </body>
+    
+  `);
+  setTimeout(() => {
+    printWindow.print();
+  }, 500);
+}
