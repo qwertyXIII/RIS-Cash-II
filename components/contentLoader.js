@@ -82,7 +82,7 @@ export function contentLoader(type, parameters) {
         answer.answer.forEach(data => {
           formForwardersDataList.prepend(new Option(data.name));
           setTimeout(() => {
-            elementsContainer.append(createElementTypeHistory(data));
+            elementsContainer.prepend(createElementTypeHistory(data));
           }, timeOut);
           timeOut += 60;
         });
@@ -93,7 +93,6 @@ export function contentLoader(type, parameters) {
 }
 
 export function createElementTypeHistory(data) {
-  console.log(data);
   let element = elementTemplateHistory.content.querySelector('.content').cloneNode(true);
   element.classList.remove('content');
   element.querySelector('.kkt-number').textContent = data.kkt;
